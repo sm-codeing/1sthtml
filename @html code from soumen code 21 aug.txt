@@ -1,0 +1,2023 @@
+
+bt template
+---------
+https://www.templatemonster.com/bootstrap-website-templates/
+
+----------
+
+
+https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_modal_gallery
+
+
+
+how-make-bootstrap-3-4-dropdowns-show-hover-desktop-only
+--------------------------------------------------------
+https://bootbites.com/tutorials/how-make-bootstrap-3-4-dropdowns-show-hover-desktop-only/
+
+
+bt css dropdown hover hover dropdown
+-------------
+https://kybarg.github.io/bootstrap-dropdown-hover/demo.html
+
+
+
+https://kybarg.github.io/bootstrap-dropdown-hover/
+
+border animation
+--------------
+
+http://www.bestjquery.com/?MGTO9JKd
+
+
+http://jsbin.com/rewelotavo/edit?html,css,output
+
+------------------------------------------------
+
+customStyleSheet.insertRule("@keyframes myfirst { from {height:188px; } to {height:10px;}}");
+
+
+or
+
+https://github.com/Keyframes/jQuery.Keyframes
+
+
+wow
+
+http://mynameismatthieu.com/WOW/docs.ht
+
+
+
+
+
+
+
+
+flex property
+-----------
+
+https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_justify_space-between
+
+https://bootsnipp.com/snippets/REjx5
+
+
+https://www.w3schools.com/css/css3_flexbox.asp
+
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+use css in Jquery
+-------------
+http://www.javascriptkit.com/dhtmltutors/css3-transitions-and-jquery.shtml
+
+css animation style type
+------
+http://webdesignerwall.com/tutorials/easy-css-animation-transition-transforms
+
+width 50% 
+---------
+https://stackoverflow.com/questions/10698636/css-two-div-width-50-in-one-line-with-line-break-in-file
+
+OR
+
+https://www.sitepoint.com/community/t/two-column-flexbox-similar-to-display-inline-block-width-50/205367/2
+
+OR
+http://jsfiddle.net/XCDsu/15/
+
+diasable equal height FLEX
+-------------------
+https://stackoverflow.com/questions/33034660/how-to-disable-equal-height-columns-in-flexbox
+
+check box for drop down
+------------------
+https://codepen.io/fxm90/pen/RPJZNz
+check box animation
+---------------
+https://codepen.io/fxm90/pen/JdmaeL
+
+active bg color on click (for portfolio)
+-------------------
+http://jsfiddle.net/z7HUv/  
+
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_active_element
+
+
+
+adding in out css animation(bounce)
+-----------------
+http://jsfiddle.net/rkau7b9o/2/
+
+https://bootsnipp.com/snippets/oPBrG
+
+adding in out css animation for bt nav on hover & click or in out dropdown animation
+------------------------------------------------------------------------------------
+belw link is on click......
+https://bootsnipp.com/snippets/qgZxN  
+
+to make this clik nav in to hover requred below link........   
+https://bootbites.com/tutorials/how-make-bootstrap-3-4-dropdowns-show-hover-desktop-only/           and the js code is need to add below
+
+<script>
+$(document).ready(function() { 
+  var navbarToggle = '.navbar-toggle'; // name of navbar toggle, BS3 = '.navbar-toggle', BS4 = '.navbar-toggler'  
+  $('.dropdown, .dropup').each(function() {
+    var dropdown = $(this),
+      dropdownToggle = $('[data-toggle="dropdown"]', dropdown),
+      dropdownHoverAll = dropdownToggle.data('dropdown-hover-all') || false;
+    
+    // Mouseover
+    dropdown.hover(function(){
+      var notMobileMenu = $(navbarToggle).size() > 0 && $(navbarToggle).css('display') === 'none';
+      if ((dropdownHoverAll == true || (dropdownHoverAll == false && notMobileMenu))) { 
+        dropdownToggle.trigger('click');
+      }
+    })
+  });
+});
+</script>
+
+
+adding in out css animation for bt nav on hover & click or in out dropdown animation by adding this on ul  after this ul class="dropdown-menu"
+--------------------------------------------------------------------------------------------------------------------- 
+ data-dropdown-in="fadeIn" data-ropdown-out="fadeOut"   ( the full ul is........   <ul class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">)  and requred tutorial.js only from downloaded file......
+------------------------------------------------------------------------------------
+
+https://bootbites.com/demos/dropdown-effects/           ( example on click )  
+
+
+or
+
+download file from 
+
+https://bootbites.com/tutorials/bootstrap-dropdown-effects-animatecss/
+
+
+BT NAV hover on full screen but click on small screen
+-----------------------------------------------------
+
+
+https://www.tutorialrepublic.com/codelab.php?topic=faq&file=make-bootstrap-dropdown-menu-on-hover
+
+
+
+
+
+background size strech responsive according to div height bg img bgimg
+----------------------------------------------------------------------
+https://stackoverflow.com/questions/30319743/fit-div-size-to-background-image
+
+
+some jquery shibling example
+----------------------------
+
+https://www.w3schools.com/jquery/jquery_traversing_siblings.asp
+
+
+css sibling selector or combinator
+----------------------------------
+
+https://www.w3schools.com/css/css_combinators.asp
+
+select bg color change
+https://api.jqueryui.com/selectable/
+
+
+jquery ui animation class name or cheat sheet 
+---------------------------------------------
+http://easings.net/
+
+
+many jquery effect
+http://www.plus2net.com/jquery/effect-explode.php
+
+bounce jquery
+https://api.jqueryui.com/bounce-effect/
+
+jquery animation  name
+https://jqueryui.com/effect/
+
+cubic breazer  -direction  cusomize
+https://codepen.io/callmenick/pen/NNBNaL
+
+exploade touggle
+http://www.devcurry.com/2010/01/explode-and-implode-element-using.html
+
+or 
+
+http://jsfiddle.net/MfegM/1569/
+
+bust
+https://codepen.io/zb3/pen/myMxQr
+
+img  logo upload bust
+https://davidwalsh.name/demo/explode-css.php
+
+or
+http://www.inserthtml.com/2013/08/exploding-blocks-css-and-javascript/
+
+
+bust or expload in css or HAML
+-------------------------------
+https://codepen.io/callumacrae/pen/pdKLQv
+
+
+
+
+
+https://eaadhaar.uidai.gov.in/#/
+
+99 WEB PAGE
+------------
+http://99webpage.com/theme-review/html/creativica/index.html
+
+next prev
+----------
+http://www.webestools.com/scripts_tutorials-code-source-10-go-to-previous-and-next-page-in-javascript-history-object.html
+
+
+
+SOME CERASOLE LIKE 3D ROUNDING ETC 
+------------------------------
+
+https://bootsnipp.com/similar/k2RdV?page=4
+
+https://bootsnipp.com/similar/k2RdV?page=9
+
+https://bootsnipp.com/similar/k2RdV?page=16
+
+SIX PRODUCT CERASOLE bootsnipp
+----------
+https://bootsnipp.com/snippets/m0q1y
+
+
+multi image cerasole cusomizable in bootsnipp 6,4,3pcs image   [ need to change col----3, 4, 2 etc and this in java script  code( var i=0;i<5;i++)------]
+------------------------------------------------------------------------------------------------------------------------------------
+
+https://bootsnipp.com/snippets/QAmDR
+
+
+
+
+multi img many -not auto
+--------------
+
+http://bxslider.com/examples/carousel-demystified
+
+
+multi image auto very good  
+----------------  
+
+  
+coppied from 
+https://codepen.io/melsumner/pen/NpPMpp   
+ 
+
+    http://kenwheeler.github.io/slick/   
+
+
+
+
+
+
+
+
+background clip or (border padding)
+-----------------------------------
+
+https://css-tricks.com/almanac/properties/b/background-clip/
+https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_background-clip
+https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip
+
+
+
+
+
+
+
+
+https://stackoverflow.com/questions/12115833/adding-a-slide-effect-to-bootstrap-dropdown
+
+
+https://stackoverflow.com/questions/41117069/get-dropdown-on-hover-menu-and-sub-menu-bootstrap-3-3-7
+
+
+before /after
+-----------
+https://stackoverflow.com/questions/34950299/how-to-add-a-dash-before-text-in-css
+
+
+or
+
+https://css-tricks.com/line-on-sides-headers/
+
+
+
+
+4 SIDE AUTO MARGIN PADING
+-------------------------
+
+https://colintoh.com/blog/display-table-anti-hero
+
+
+
+
+BACKGROUND IMAGE - MULTI IMAGE ,POSITION SIZE, RESPONSIVE
+--------------------------------------------------------
+
+https://www.w3schools.com/css/tryit.asp?filename=trycss3_background_multiple3
+
+
+https://www.w3schools.com/css/css3_backgrounds.asp
+
+
+
+HTML MAP TAG FOR IMAGE
+-----------------------
+
+https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_areamap
+
+  <area shape="poly" coords="118, 73, 63, 72, 69, 30, 118, 42" />
+
+<object data="planets.gif" alt="Planets" type="image/gif" usemap="#Map1">
+  <map name="Map1">
+  <a href="sun.htm" shape="rect" coords="0,0,82,126">The Sun</a>
+
+  <a href="mercur.htm"shape="circle" coords="90,58,3">Mercury</a>
+
+  <a href="venus.htm" shape="poly" coords="118, 73, 63, 72, 69, 30, 118, 42">Venus</a>
+  </map>
+</object>
+
+
+
+HTML image MAP generator FOR IMAGE create poly shape for a map
+----------------------------------
+http://imagemap-generator.dariodomi.de/
+
+responsive image map and tooltip
+--------------------------
+https://www.jqueryscript.net/other/jQuery-Plugin-To-Generate-Stylable-Image-Maps-Using-SVG-ProMap.html
+
+image map need to modify
+------------------------
+https://www.jqueryscript.net/other/jQuery-Plugin-For-Canvas-Image-Map-Area-Editor-Canvas-Area-Draw.html
+
+
+inline map style in js 
+----------------------
+
+https://home.ctw.utwente.nl/slootenvanf/wp-content/uploads/examples/archive/jquery_plugins/imagemap/
+
+download map plugin
+-------------------
+
+https://www.jqueryscript.net/other/Simple-jQuery-Plugin-For-Highlighting-Image-Map-Maphilight.html
+
+edit above downloaded file border and hover bag color
+-----------------------------------------------------
+https://davidlynch.org/projects/maphilight/docs/
+
+
+BLUE
+----
+====
+
+
+last in first out
+-----------------
+
+http://callmenick.com/post/last-in-first-out-css-transitions
+
+
+tooltip search
+--------------
+https://bootsnipp.com/snippets/R5k0n
+
+
+
+may use on search box
+http://jsfiddle.net/techsin/dxYCm/5/
+
+
+many search box
+---------------
+
+https://bootsnipp.com/search?q=search
+
+on hover out search
+-----------------
+https://bootsnipp.com/snippets/featured/slider-search-box
+
+nav with hover out search
+-------------------------
+https://bootsnipp.com/snippets/bpmmA
+
+
+
+
+SEARCH LIKE BUSINESS LIBRARY OR SEARCH WITH SELECT SEARCH WITH DROPDOWN
+-----------------------------------------------------------------------
+
+https://bootsnipp.com/snippets/88P5
+
+add to cart qty button - quantity increment - plus minus button
+-------------------------------
+
+https://bootsnipp.com/similar/e3q3a
+
+https://bootsnipp.com/snippets/featured/input-spinner-with-min-and-max-values
+
+qty circle design
+------------------
+
+https://bootsnipp.com/snippets/xpd5G
+
+ribbon bookmark ribon
+---------------------
+https://bootsnipp.com/similar/e3q3a?page=3
+
+
+
+switch on off button
+--------------------
+https://bootsnipp.com/snippets/2oEB0
+
+team with read more type button readmore
+----------------------------------------
+https://bootsnipp.com/snippets/featured/thumbnail-with-caption-amp-buttons
+
+animated button ani
+-------------------
+https://bootsnipp.com/snippets/xrE4m
+
+button to text box on click
+-----------------------------
+https://bootsnipp.com/snippets/10BE9
+
+use image on button
+-------------------
+https://bootsnipp.com/snippets/0y11a
+toggleclass
+https://codepen.io/WebIsm/pen/pvVrgj
+
+OR
+https://css-tricks.com/forums/topic/add-removing-class-on-click-once-and-again/
+
+add remove
+http://jsfiddle.net/tw16/JfK6N/
+
+
+tooltip  toltip tooltip top right bottom left
+---------------------------------------------
+
+https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_tooltip_css&stacked=h
+
+https://www.w3schools.com/howto/howto_css_tooltip.asp
+
+https://www.bootply.com/97094
+
+
+================================
+ease effect name
+https://www.sitepoint.com/animating-with-jquery/
+
+on click ease effacet
+http://jsfiddle.net/u7GX8/
+
+
+ease out bounce
+https://api.jqueryui.com/addClass/
+
+from
+https://api.jqueryui.com/category/effects/
+
+
+simple if else
+---------
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_hide_show
+
+on click show hide
+------------------
+http://www.includehelp.com/code-snippets/Demo/Example4.html
+
+simple port folio show hide
+--------
+https://codepen.io/jreid/pen/plaGv
+OR
+https://www.evoluted.net/thinktank/demos/simple-jquery-filtering/
+
+wright a animation for show & hide
+-------------
+http://api.jquery.com/show/
+
+like css key frame by jquery animate
+http://api.jquery.com/animate/
+
+or
+https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_animation2
+
+multi animate
+https://www.w3schools.com/jquery/exercise.asp?filename=exercise_animate3
+
+show hide explode effect
+------
+http://jsfiddle.net/4vaxE/28/
+
+
+try java script 
+for css ani mation key frame adding
+---------------
+https://stackoverflow.com/questions/4847996/css-animation-onclick
+
+
+jquery img hover direction
+
+http://www.jqueryscript.net/demo/Simple-jQuery-Direction-Aware-Hover-Animation-Plugin-Hover-Direction/
+
+
+
+one botton open close animation effect with jauery ui lib and jquery sassing animation name
+
+https://api.jqueryui.com/toggleClass/
+
+
+
+nav with ser & buton { can make like icare type nav}
+
+https://bootsnipp.com/snippets/NxjN6
+
+
+SET NAV WITH LOGO IMAGE
+----------------------
+
+https://bootsnipp.com/snippets/ae2yz
+
+
+
+nav over cerasole
+-----------------
+
+https://bootsnipp.com/snippets/40NOn
+
+one page fixed nav template
+---------------------------
+https://codepen.io/suez/pen/LCHlA
+
+pure i-care type social nav 
+---------------------------
+
+https://bootsnipp.com/snippets/Gzorl
+
+or
+https://bootsnipp.com/snippets/eomyK
+
+
+
+pure i-care type nav  &  ACCORDION
+----------------------------------
+
+https://bootsnipp.com/snippets/ZkpRl
+
+or
+(below is drop down not working)
+https://bootsnipp.com/snippets/featured/toggle-navbar-with-slide-down-animation
+
+
+https://bootsnipp.com/snippets/featured/toggle-navbar-with-slide-down-animation
+
+count down time counter countdown (not checked)
+----------------------------
+https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/
+
+https://codepen.io/ishanbakshi/pen/pgzNMv
+
+https://www.tickcounter.com/
+
+
+
+circle border hover effect
+---------------------------
+
+https://bootsnipp.com/snippets/7QVml
+
+
+DOUBLE BORDER COLOR
+-------------------
+
+https://www.w3schools.com/css/tryit.asp?filename=trycss_outline-color
+
+https://www.w3schools.com/css/css_outline.asp
+
+
+text border
+-----------
+
+https://stackoverflow.com/questions/13426875/text-border-using-css-border-around-text
+
+
+border collapse
+---------------
+https://codepen.io/anon/pen/NBPpBy
+
+
+
+search , icare logo image etc
+-----------------------------
+
+https://bootsnipp.com/maridlcrmn
+
+
+
+BT NAV BREAK POINT BEFORE 767PX
+------------------------------
+
+
+https://jsfiddle.net/24xpkgcv/
+
+
+(NEED TO ADD THIS AT LAST IN jsfiddle CSS 
+-----------------------------------------
+
+
+
+
+ .navbar-nav {
+        float: none!important;
+        /*margin: 7.5px -15px;*/
+		margin: 7.5px -15px 7.5px -15px;/*( IN PREVIOUS LINE IT ALREADY HAVE  .navbar-nav - YOU CAN DELETE THE CODE IN PREVIOUS LINE)*/
+		background:#666;
+    }	
+	
+ .container {
+	  width:100%!important ;
+	  padding-left: inherit;
+	  padding-right:inherit;
+	  
+	  
+	
+}
+
+
+.navbar-default {
+    border-color: #e7e7e7;
+	
+    margin-left: -15px;
+    margin-right: -15px;
+}	
+
+
+)
+
+no bt responsive nav break in before 768px
+------------------------------------------
+
+https://codepen.io/robbyklein/pen/Acist
+
+
+
+BT NAV BREAK POINT IN SMALL THAN 767PX
+------------------------------
+
+
+https://stackoverflow.com/questions/19827605/change-bootstrap-navbar-collapse-breakpoint-without-using-less
+
+Sticky Navbar very good 
+-------------
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_navbar_sticky
+
+sticky nav hide on scroll bottom
+--------------------------------
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_navbar_hide_scroll
+
+
+Sticky Navbar header
+--------------------
+
+https://bootsnipp.com/snippets/z1Dx8
+
+https://bootsnipp.com/snippets/PExlb
+
+https://bootsnipp.com/snippets/7KAyK
+
+https://bootsnipp.com/snippets/b4vW6
+
+sticky nav come on scroll
+-------------------------
+
+https://codepen.io/MightyShaban/pen/CIfdj
+
+height responsive
+-----------------
+https://codepen.io/MightyShaban/pen/CIfdj
+
+header template( with nav & slider)
+------------------------------------
+
+https://s.bootsnipp.com/similar/Nj8qQ
+
+
+
+(can use as social top right)
+
+https://bootsnipp.com/snippets/Bqy7E
+
+
+
+paralax template quite ready
+----------------------------
+
+
+https://bootsnipp.com/snippets/V79gZ
+
+double paralax
+--------------
+
+https://bootsnipp.com/snippets/M32BW
+
+SCROLL BUTTON VISIBLE IN HOVER 
+-------------------------------
+
+https://s.bootsnipp.com/snippets/kW13M
+
+
+
+SHORT JS CODE FOR HOVER NAV SLIDE UP & DOWN
+--------------------------------------------
+
+
+https://s.bootsnipp.com/snippets/l0g8a
+
+
+CARD SHADOW
+-----------
+
+https://s.bootsnipp.com/snippets/gve47
+
+
+
+BUTTON HOVER EFFECT QUITE LIKE SWAN TEMPLATE
+--------------------------------------------
+
+https://s.bootsnipp.com/snippets/AXynx
+
+
+many Button hover effect 
+------------------------
+
+https://bootsnipp.com/snippets/8Erb
+
+https://bootsnipp.com/snippets/67avP
+
+https://bootsnipp.com/snippets/vOVG7
+
+https://bootsnipp.com/snippets/y83R8
+
+https://bootsnipp.com/snippets/bxVnr
+
+https://bootsnipp.com/snippets/KBk1g
+
+https://bootsnipp.com/snippets/qgKG0
+
+https://bootsnipp.com/snippets/40O0R
+
+https://bootsnipp.com/snippets/featured/boxes-with-icon-hover
+
+https://bootsnipp.com/snippets/j0D6R
+
+https://bootsnipp.com/snippets/RE8EA
+
+https://codepen.io/phenax/pen/vOoOWK        .....(good)
+
+
+counter in bootsnipp  Funfact styles
+------------------------------------
+https://bootsnipp.com/snippets/RX9zA
+
+FONT WEIGHT, SIZE, LINEHEIGHT IN A SINGLE LINE in css
+-----------------------------------------------------
+
+h2 {font: 100 226px/526px "Open Sans Condensed", sans-serif;}
+
+ANIMATED FONT 
+-------------
+
+https://bootsnipp.com/snippets/rv7WR
+
+
+
+USE FUL HOVER EFFECT FOR DIGITAL TEMPLATE NAV
+---------------------------------------------
+
+https://s.bootsnipp.com/snippets/3XMgX
+
+
+
+ANOTHER CHILD ACCORDION IN SIDE A PARENT ACCORDION
+--------------------------------------------------
+
+https://bootsnipp.com/snippets/4O4DW
+
+
+
+MANY  HOVER EFFECT
+------------------
+
+https://bootsnipp.com/snippets/Qoe8X
+
+
+
+https://bootsnipp.com/snippets/9yO76
+
+
+
+https://bootsnipp.com/snippets/kEZjR
+
+
+
+TEXT CIRCLEING ON HOVER
+-----------------------
+
+https://bootsnipp.com/snippets/ql7O9
+
+
+stylish radio button
+---------------------
+https://codepen.io/manabox/pen/raQmpL
+
+
+
+SCROLL FROM TOP TO BUTTOM OR BOTTOM TO TOP
+--------------------------------------------
+
+https://bootsnipp.com/snippets/PE41m
+
+
+
+
+
+
+Animate on scroll with wow.js (NEED TO CHECK WORKING OR NOT)
+------------------------------------------------------------
+
+https://bootsnipp.com/snippets/6n4mr
+
+
+AOS  LOADING ON SCROLL ANIMATION (IN CHROME NEED TO CHECK)
+-----------------------------------------------------
+
+https://bootsnipp.com/snippets/Dq36a
+
+
+INFINITE BOUNCE UP DOWN
+-----------------------
+
+https://bootsnipp.com/snippets/oPBrG
+
+
+
+WAVE BACKGROUND ANIMATION
+-------------------------
+
+https://bootsnipp.com/snippets/xN09X
+
+
+ON CLICK WATER WAVE ANIMATION (CHROME NW)
+-----------------------------------------
+
+https://bootsnipp.com/snippets/nrBO8
+
+stick right scroll 
+------------------
+http://davist11.github.io/jQuery-Stickem/
+
+
+======
+LOADER
+======
+
+http://jsfiddle.net/d9ngT/
+
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5
+
+https://bootsnipp.com/snippets/featured/creative-animated-loading-icon-in-html5-css3
+
+https://bootsnipp.com/snippets/featured/animated-loading
+
+https://bootsnipp.com/snippets/featured/creative-animated-loading
+
+
+https://bootsnipp.com/snippets/0e26d       ( water loading in cup )
+
+DIGITAL LOADER 
+--------------
+
+https://bootsnipp.com/snippets/3Xymn
+
+https://bootsnipp.com/snippets/1elNy
+
+
+
+
+E-COMMERCE ADD TO CART QTY INCRESE  & DISCRESS
+----------------------------------------------
+
+https://bootsnipp.com/snippets/featured/bootstrap-number-spinner
+
+
+IMAGE HOVER EFFECT
+------------------
+
+https://bootsnipp.com/snippets/KBrA4
+
+
+https://bootsnipp.com/snippets/4Oye2
+
+
+
+bt badge label etc
+------------------
+
+https://getbootstrap.com/docs/3.3/components/#btn-groups-nested
+
+
+
+
+make font awesome only border
+-----------------------------
+
+http://jsfiddle.net/211epk5q/
+
+
+( this is css below
+
+
+.line_fant {
+    color:rgba(0,0,0,0);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: orange;
+}
+
+)
+
+
+making shape in css like trangle rombosh and image is inside
+------------------------------------------------------------
+
+https://codepen.io/CreativeJuiz/pen/Hizkh
+
+http://coursesweb.net/css/rhombus-shape_cs
+
+making star shape in css
+------------------------
+https://blog.internetacademy.co.in/2016/03/08/creating-shapes-using-html-and-css/
+
+
+many shape in css
+-----------------
+
+http://www.cssportal.com/css3-shapes/
+
+simple trangle or outher shape in css
+-------------------------------------
+
+https://bennettfeely.com/clippy/
+
+
+http://www.cssportal.com/css3-shapes/
+
+input type file  file upload button custom style 
+------------------------------------------------
+https://codepen.io/CSWApps/pen/GKtvH
+
+http://jsfiddle.net/cpkefo3o/
+
+https://jsfiddle.net/Dezain/030qspv4/
+
+
+UPLOAD IMAGE PREVIEW
+--------------------
+
+https://codepen.io/mobifreaks/pen/LIbca
+
+(REQURED this link 
+ 
+http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js )
+
+
+http://www.inserthtml.com/2013/08/exploding-blocks-css-and-javascript/
+
+IMAGE SLICE
+----------------
+https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_border-image-slice
+
+
+FONT STRECH TOP TOBOTTOM OR FONT HEIGHT or text height( here width also)
+-----------------------------------------------------------
+http://www.exeideas.com/2013/07/stretch-font-text-horizontally-and-vertically.html
+or
+http://exeideaslab.blogspot.in/2013/06/stretch-font-horizontally-and.html
+
+
+pannel or flex
+--------------
+https://bootsnipp.com/snippets/REjx5
+
++++++++++++++
+KUS SOFTWARE
++++++++++++++
+
+LIST VIEW GRID VIEW  
+-------------------
+https://bootsnipp.com/snippets/featured/list-grid-view
+
+https://bootsnipp.com/similar/qgl0D
+
+simple trangition touggle like bootstrap in jquery or one button open close or slide touggle or show hide
+---------------------------------------------------------------------------------------------------------
+http://api.jquery.com/slidetoggle/ 
+
+Bootstrap Button Select OR SELECT BOX SELECT DROPDOWN select menu with find or search select button
+-------------------------------------------------------------------------------------
+https://bootsnipp.com/snippets/P2GZ1
+
+https://bootsnipp.com/snippets/featured/multiselect-with-icons
+
+
+
+Bootstrap Button Select OR SELECT BOX SELECT DROPDOWN select menu
+
+-----------------------------------------------------
+https://bootsnipp.com/snippets/GXagX
+
+https://bootsnipp.com/snippets/NDvXx
+
+
+html charrecter ascII  bar bars 3bar many direction or up down etc written in css file
+--------------------------------------------------------------------------------------
+
+http://www.theasciicode.com.ar/ascii-printable-characters/vertical-bar-vbar-vertical-line-vertical-slash-ascii-code-124.html
+
+
+
+html charrecter ascII  charret caret many direction or up down etc written in css file
+--------------------------------------------------------------------------------------
+
+tutorial example
+
+http://jsfiddle.net/sandeep/HPrkU/1/
+
+CSS (ISO)  JS (Octal) ascII value
+
+https://brajeshwar.github.io/entities/           (for use in css before after as content:"\25b6";)
+
+
+
+
+
+html charrecter ascII  charret caret many direction or up down etc for in html file
+-----------------------------------------------------------------------------------
+
+
+https://stackoverflow.com/questions/2701192/what-characters-can-be-used-for-up-down-triangle-arrow-without-stem-for-displa
+
+http://www.artishock.net/coding/css-list-styling-using-ascii-special-characters/
+
+https://codepen.io/IgnaciodeNuevo/pen/QwwoRR
+
+https://codepen.io/leetech/pen/bIAah
+
+
+
+html charrecter ascII  charret caret in w3schools
+-------------------------------------------------
+
+https://www.w3schools.com/charsets/ref_html_utf8.asp
+
+
+
+MANY SELECT BOX 
+---------------
+
+https://bootsnipp.com/similar/6l06B?page=1
+
+AND NEXT PAGINATION 12345 ETC
+
+https://bootsnipp.com/snippets/45vlK
+
+https://bootsnipp.com/snippets/NDvXx
+https://bootsnipp.com/snippets/7NkK8
+
+
+ANIMATED SELECT BOX
+-------------------
+
+https://bootsnipp.com/snippets/04dN4
+
+
+DISPLAY ALL ADDED PRODUCT ON ADD TO CART 
+----------------------------------------
+https://bootsnipp.com/snippets/d3Zmz
+
+
+CHECK BOX SELECT OVERLAY IN PRODUCT IMAGE
+-----------------------------------------
+https://bootsnipp.com/snippets/deV3j
+
+
+COLOR PICKER BOX
+----------------
+https://bootsnipp.com/snippets/xvRWm
+
+
+BG COLOR BLINK IN JS
+--------------------
+
+https://bootsnipp.com/snippets/nPkjk
+
+
+
+PLACE HOLDER COLOR PLACEHOLDER COLOR
+------------------------------------
+
+https://bootsnipp.com/snippets/PEBl1
+
+
+GRADIENT HOVER ANIMATION
+------------------------
+https://bootsnipp.com/snippets/7KaXj
+
+
+FIXED HEADER TABLE
+------------------
+
+https://codepen.io/tjvantoll/pen/JEKIu
+
+https://jsfiddle.net/dPixie/byB9d/3/
+
+image gallery space gallery
+---------------------------
+
+https://www.sitepoint.com/5-jquery-image-hoverclickscroll-plugins/
+
+obc or one button open close (not checked)
+------------------------------------------
+https://www.sitepoint.com/community/t/show-one-div-but-hide-another/4948
+
+simple verticl tab or obc in js (not checked)
+---------------------------------------------
+
+accordion on click icon change
+-------------------------------
+
+https://bootsnipp.com/snippets/j2rM9
+
+scroll button style stylish scroll bar
+--------------------------------------
+http://gromo.github.io/jquery.scrollbar/demo/basic.html
+
+https://www.npmjs.com/package/jquery.scrollbar
+
+multi dropdown nav navbar bt nav menu
+-------------------------------------
+
+https://bootsnipp.com/snippets/mM89z
+
+https://bootsnipp.com/snippets/gNPp0
+
+scrollepsy
+----------
+in vertical tab nav-----
+
+https://codepen.io/pankucins/pen/RGGPxq
+
+https://codepen.io/tag/scrollspy/7/#
+
+https://codepen.io/yowainwright/pen/bmLgA
+
+drawer nav----
+
+https://codepen.io/saintjon/pen/waJYON
+
+scrollepsy active with visited------
+
+https://codepen.io/SitePoint/full/GgOzwX
+
+in top nav----
+
+https://jsfiddle.net/mekwall/up4nu/
+
+
+
+
+https://lmgonzalves.github.io/spy/#eenie
+
+nav like flip shutter 
+---------------------
+https://www.newmediacampaigns.com/blog/nicer-navigation-with-css-transitions-part-2
+
+nav caret up down
+-----------------
+https://bootsnipp.com/snippets/PjyRx
+
+button caret up down with text change in touggle or collapse
+------------------------------------------------------------
+
+http://jsfiddle.net/maybolles/tL1ueq7q/
+
+
+ (my created myy created in w3schools)
+======================================
+
+
+button or span caret up down very good (my created in w3schools)
+------------------------------------------------------
+https://www.w3schools.com/code/tryit.asp?filename=FT4W3SM8W9OJ
+
+sticky sidebar ---can be use as multiple sticky top & sidebar
+------------------------------------------------------------
+https://www.w3schools.com/howto/howto_css_image_sticky.asp
+
+sticky nav with animation  (my created in w3schools)
+----------------------------------------------------
+
+ https://www.w3schools.com/code/tryit.asp?filename=FTC29VODABTY
+
+
+top nav active bg color multiple or scrollepsy  (my created in w3schools)
+-------------------------------------------------------------------------
+
+ https://www.w3schools.com/code/tryit.asp?filename=FTC2A868YP4K
+
+side nav active bg color multiple or scrollepsy or affix (my created in w3schools)
+----------------------------------------------------------------------------------
+
+https://www.w3schools.com/code/tryit.asp?filename=FTC2CBY5MBOX
+
+bootstrap collapse in
+---------------------
+
+https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_collapsible_in&stacked=h
+
+
+bootstrap collapse
+---------------------
+https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_collapsible2&stacked=h
+
+===========================
+
+key word----- How to add class when the content scrolls into view.----key word
+
+if element on screen anoteher element will effected (not checked)
+----------------------------------------------------------------
+http://web-profile.net/jquery/dev/jquery-check-if-element-is-visible-on-screen/
+
+list of animate css class
+-------------------------
+https://github.com/daneden/animate.css
+
+ading animate css in on screen or view on scroll
+------------------------------------------------
+https://stackoverflow.com/questions/14986738/when-a-div-comes-into-view-add-class
+
+on view animation or style change on screen onScreen
+----------------------------------------------------
+https://codepen.io/ross-angus/pen/kXxVbV
+
+or
+
+http://benpickles.github.io/onScreen/
+
+(need to add this two library
+
+jquery.onscreen.js
+
+jquery.onscreen.min.js  
+
+and this is the code
+
+$(function() {
+  setInterval(function() {
+    $("h2")                             // get all <h2>s
+      .css("background-color", "")      // reset their background colours
+      .filter(":onScreen")              // get only <h2>s on screen
+        .css("background-color", "red") // give them a red background
+  }, 1000)                              // repeat every second
+}))
+
+
+
+
+
+end blue
+=========
+
+
+
+
+
+
+
+
+
+
+
+
+
+image hover effect
+
+https://bootsnipp.com/similar/EKaVD?page=1
+
+HOVER EFFECT & PRODUCT DISPLAY
+-------------------------------
+https://bootsnipp.com/snippets/mpN8O
+
+https://bootsnipp.com/snippets/M5mDB
+
+hover scroll zoom
+-----------------
+
+https://www.jqueryscript.net/demo/Simple-jQuery-Image-Zoom-With-Mouse-Wheel-or-Touch-Scroll/
+
+
+page scroll image zoom
+-----------------------
+https://codepen.io/derekjp/pen/gaWxNd
+
+https://ihatetomatoes.net/how-to-zoom-into-an-image-on-scroll/   
+
+
+scroll detect
+-------------
+http://qnimate.com/detecting-end-of-scrolling-in-html-element/     (not checked)
+
+https://kylewbanks.com/blog/Detecting-Scroll-Events-And-Getting-Scroll-Offset-With-jQuery    (not checked)     
+
+
+SUB  & SUP SCRIPT ,UNDERLINE ETC
+--------------------------------
+
+https://www.w3schools.com/html/html_formatting.asp
+
+light box by href
+
+https://bootsnipp.com/snippets/33Qjo
+
+
+
+black & white image to color img on hover
+
+https://bootsnipp.com/snippets/a6QWD
+
+
+GLYPHICON CHEAT SHEET
+------------------------
+
+https://glyphicons.bootstrapcheatsheets.com/#
+
+easy cerasole animation add
+---------------------------
+https://bootsnipp.com/snippets/1BMbV
+
+
+
+
+
+cerasole type
+
+
+team slider,quote slider, Carousel Reviews wit, Product Slider,testimonials slider
+
+
+
+https://bootsnipp.com/snippets/EKbo8
+
+https://bootsnipp.com/snippets/zDzK1
+
+https://bootsnipp.com/snippets/56epB
+
+https://bootsnipp.com/snippets/zDRnX
+https://bootsnipp.com/snippets/featured/carousel-reviews-with-rating
+https://bootsnipp.com/similar/33PAz?page=5
+
+https://bootsnipp.com/similar/33PAz?page=3 
+https://bootsnipp.com/similar/33PAz?page=4
+
+ADVANCE MENU DESIGN STYLISH MENU (NOTCHECKED)
+--------------------------------
+http://freefrontend.com/css-menu/
+
+
+BREAD CRUMP MENU AND RESPONSIVE NAV (NOTCHECKED)
+-----------------------------------
+https://envato.com/blog/css-snippets-responsive-menus/
+
+no bt responsive menu nav good
+------------------------------
+
+https://www.cssscript.com/responsive-dropdown-nav-menu-pure-css/
+
+gradient generator good
+-----------------------
+https://cssgradientbutton.com/
+
+
+
+footer always in bottom
+-----------------------
+http://jsbin.com/bewamodofeca/2/watch?html,css,output    (need to put all content in side this two div BUT footer will not in inside this two div)
+
+
+SMOKED GLASS
+------------
+
+https://bootsnipp.com/snippets/bXgde
+
+
+
+input type style password squre circle disc copy lock in input type
+-------------------------------------------------------------------
+
+http://jsfiddle.net/ThiefMaster/6uJJw/1/
+
+text showing below input type box
+---------------------------------
+http://jsfiddle.net/ThiefMaster/6uJJw/1/
+
+
+Inserting HTML Contents or element Before or After the html Elements in jQuery
+------------------------------------------------------------------------------
+https://www.tutorialrepublic.com/codelab.php?topic=jquery&file=insert-html-before-and-after-an-element
+
+add class or replace class with jquery
+-------------------------------------
+https://codepen.io/atwright147/pen/HEfDu
+
+
+add class, id, tag etc with js in header or footer or in any class or any id  with js in HTML
+---------------------------------------------------------------------------------------------
+
+https://api.jquery.com/addclass/
+
+http://api.jquery.com/append/  
+
+
+
+
+$( ".main-menu" ).addClass( "myClass yourClass new_cl" );
+
+$( "#cust_myid" ).addClass( "c_myClass g_yourClass new_cl" );
+
+$( "p" ).addClass( "myClass yourClass" );
+
+$( "p" ).last().addClass( "selected" );
+
+$( "nav" ).addClass( "c_myClass g_yourClass new_cl" );
+
+
+
+
+
+
+add css FILE with js in header or footer or in any class by js or append tag in MTML by js
+------------------------------------------------------------------------------------------
+
+http://api.jquery.com/append/
+
+<script>
+
+$('.cu_ft').append('<link rel="stylesheet" type="text/css" href="css/st.css">');
+
+</script>
+
+
+<script>
+$('body').append('<link rel="stylesheet" type="text/css" href="css/styles.css">');
+
+</script>
+
+
+<script>
+$('header').append('<link rel="stylesheet" type="text/css" href="css/styles.css">');
+
+</script>
+
+<script>
+
+var css = $("<link>", {
+  "rel" : "stylesheet",
+  "type" :  "text/css",
+  "href" : "css/st.css"
+})[0];
+
+css.onload = function(){
+  console.log("CSS IN IFRAME LOADED");
+};
+
+document
+  .getElementsByTagName("head")[0]
+  .appendChild(css);
+
+</script>
+
+MY WEBSITE ADDRESS
+___________________
+
+http://infinitussoft.com/
+
+www.westavenuegroup.com.au
+
+http://buddhistlibrary.org.au/
+
+http://csabins.com.au
+
+http://www.towtruck.com.au/
+
+http://www.eeots.com/
+
+
+
+
+
+find all class in template folder in find and replace
+-----------------------------------------------------
+
+open documents
+
+source code
+
+-----------------------------------------------------
+
+
+image copy right check
+-----------------------
+https://www.google.com/imghp
+
+https://www.drumbeatmarketing.net/marketing-blog/4-easiest-ways-tell-image-copyrighted
+https://www.tineye.com/
+
+image download
+--------------
+https://www.freepik.com/free-psd/hands-phone-and-finger_1210329.htm#term=technology&page=2&position=27
+
+https://pngtree.com/freepng/smoky_19553.html
+https://unsplash.com/
+https://stocksnap.io/
+
+
+INSTAL .ico file IN PSD
+--------------------------
+
+ico file down load
+http://www.telegraphics.com.au/sw/
+
+
+ico file install path
+
+https://forums.adobe.com/thread/1013420
+
+C:\Program Files\Adobe\Adobe Photoshop CS6 (64 Bit)\Required\Plug-Ins\File Formats
+
+
+
+
+
+
+INSTAL FONT AWESOME IN PSD
+--------------------------
+
+https://www.ostraining.com/blog/webdesign/fontawesome-psd/
+
+
+Install the font file FontAwesome.otf
+
+    In Windows, copy-paste the file FontAwesome.otf to your fonts folder (commonly located in: C:\Windows\Fonts\)
+    In Mac, you just double click over the FontAwesome.otf file, then click "Install font"
+
+next step
+
+copy font awesome icon image from font awesome cheatsheet and paste in psd work sheet
+
+
+
+wordpress instaling wp
+----------------------
+
+https://premium.wpmudev.org/blog/setting-up-xampp/  
+
+
+wordpress max file upload 
+--------------------------
+
+
+https://www.youtube.com/watch?v=74NqoXukieQ    ..........(php .ini)
+
+https://www.google.co.in/search?q=how+to+increse+word+press+file+upload+size+in+locall+host+xampp&ie=utf-8&oe=utf-8&client=firefox-b-ab&gfe_rd=cr&dcr=0&ei=sM0sWu6cKaOH8QfXuJPoBw#gfe_rd=cr&kpvalbx=1
+
+https://www.youtube.com/watch?v=iUTSOSEmBkA
+
+wp default size is below
+size=8M  ....for media like image etc
+size=2M  ....for plugin or theme
+
+
+wordpress nav or menu HTML structure
+------------------------------------
+
+Menu should only in ul li not in nav tag or nav class prppperly good. only one class will apply only in main ul 
+
+if having any extra developer will add this in code not in admin pannel its call advance customization or advance extention 
+
+it can be edited with navwaker. 
+
+          ==
+        ======
+=======================
+  wordpress elementor
+=======================
+        ======
+          ==
+
+
+wordpress elementor paralax making
+----------------------------------
+https://www.youtube.com/watch?v=bqIvPFssa3k
+
+nav menu add on elementor
+-------------------------
+https://wordpress.org/plugins/navmenu-addon-for-elementor/
+
+
+bt move to fade slider 
+----------------------
+
+https://www.bootply.com/86170    (only need the css part )
+
+
+
+
+elementor hover effect
+------------------------
+https://www.youtube.com/watch?v=7ZFpmwYW8C0 
+
+
+bt nav in w3schools with dropdown and touggle in small screen
+-------------------------------------------------------------
+
+https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_navbar_collapse&stacked=h  
+
+  https://www.w3schools.com/bootstrap/bootstrap_navbar.asp
+
+
+
+bt off canvas nav can any customize 
+-----------------------------------
+
+https://www.jqueryscript.net/demo/Off-canvas-Push-Menu-jQuery-Plugin-For-Bootstrap/
+
+
+Note ----  ( need only --- offcanvas.min.css, and  offcanvas.js file  ---- and the nav html part from its view source page and to make it from right side just replace only the 'left' in to 'right' in its offcanvas.min.css file using find and replace in word or in note pad) ( to move the menu touggle botton from left to right just remove or decative this class----pull-left from html)( to work dropdown menu properly find this   
+
+   $('.navbar .nav a').click(function () ------- from its offcanvas.js file and 
+inherit by adding   z  before  navbar  or replace with --- $('.znavbar .znav a').click(function () ----   or remove the complete script part  from the  offcanvas.js file ) -------
+
+
+
+nav-justified  css from bootstrap to make custom justified nav with out bootstrap file  or same width div like css calc function
+--------------------------------------------------------------------------------------------------------------------------------
+
+<style>
+
+ .cus-justified_menu {
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-ms-flex-wrap:wrap;
+	flex-wrap:wrap;
+	padding-left:0;
+	margin-bottom:0;
+	list-style:none
+}
+.cus-justified_menu li {
+	-webkit-box-flex:1;
+	-ms-flex:1 1 auto;
+	flex:1 1 auto;
+	text-align:center
+}	  
+	  
+</style>
+
+<UL class="cus-justified_menu">
+    <LI>Africa</LI>
+    <LI>Antarctica</LI>
+    <LI>Asia</LI>
+    <LI>Australia</LI>
+    <LI>Europe</LI>
+    <LI>North America</LI>
+    <LI>South America</LI>
+</UL>
+
+
+
+
+
+
+CSS HAKING only for chrome 
+---------------------------
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {.mz_sq { -webkit-border-radius: 50px;
+-moz-border-radius: none;}}
+
+
+
+css infinite flip animation GOOD
+-------------------------------
+
+https://codepen.io/kristofsw/pen/oLaqx
+https://www.webascender.com/blog/css-3d-card-flip-animation-tutorial/
+https://webkit.org/blog-files/3d-transforms/transform-style.html
+http://jsfiddle.net/raving/e2tt2mao/
+http://www.the-art-of-web.com/css/3d-transforms/
+http://www.the-art-of-web.com/css/3d-transforms/
+
+flip team page animation
+------------------------
+https://bootsnipp.com/snippets/featured/team-design-card-flipper-using-bootstrap-4
+
+file upload button 
+------------------
+https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/
+https://codepen.io/wallaceerick/pen/fEdrz
+https://bootsnipp.com/snippets/2eNKz
+https://bootsnipp.com/snippets/o13dG
+
+https://bootsnipp.com/snippets/featured/input-file-popover-preview-image
+
+https://bootsnipp.com/snippets/RlnZ5
+
+multi file upload button with preview
+-------------------------------------
+
+https://bootsnipp.com/snippets/B2yPB
+
+
+ripple effect
+-------------
+https://tympanus.net/codrops/2015/09/14/creating-material-design-ripple-effects-svg/
+
+call button on click in mobile ---- mobile call
+----------------------------------------------
+
+https://digitalshiftmedia.com/google-analytics-event-tracking/
+
+also need google link
+
+
+click to call
+-------------
+	
+<script>
+           gtag('config', 'AW-770285119/rCgGCOjN77MBEL-8pu8C', {
+           'phone_conversion_number': '9083783983'
+           });
+</script>
+
+<p> call  <a href="tel:+919083783983">html 9083783983</a></p>
+				
+			
+site share , link share small details
+-------------------------------------
+
+<meta property="og:title" content="Soumen Website">
+<meta property="og:image" content="https://soumenproject.000webhostapp.com/wp-content/uploads/2020/08/sandwich.jpg">
+<meta property="og:description" content="This is just an example page.">
+<meta property="og:url" content="https://soumenproject.000webhostapp.com">
+<meta name="twitter:card" content="summary_large_image">
+
+
+
+from validation pattern
+-----------------------
+https://www.w3schools.com/tags/att_input_pattern.asp
+
+
+date picker
+-----------
+
+https://bootsnipp.com/snippets/v2K8b
+
+
+text gradient bg gradient
+-------------------------
+https://bootsnipp.com/similar/K5183?page=1
+
+button gradient many style
+--------------------------
+https://mdbootstrap.com/components/
+
+page=2
+
+page=4
+
+page=7
+
+
+page=8
+
+page=10
+
+bg position gbackground img position
+------------------------------------
+https://stackoverflow.com/questions/2949606/repeat-css-background-image-a-set-number-of-times
+
+
+place holder text color change
+------------------------------
+
+https://bootsnipp.com/snippets/PEBl1
+
+badge or label lavel
+--------------------
+https://bootsnipp.com/semanticui/snippets/featured/ui-cards-with-labels-and-tags
+
+captcha from form form validation
+---------------------------------
+https://bootstrapious.com/p/bootstrap-recaptcha
+
+bt form validation bootstrap or from validation
+----------------------------------------------------------------------
+https://codepen.io/jaycbrf/pen/iBszr
+
+
+progress bar
+------------
+https://bootsnipp.com/snippets/featured/progress-bar-tiles
+
+
+
+input type types of input
+-------------------------
+
+http://www.htctu.net/html5/forms/formInputTypes.html
+
+
+lock view page source or f12 key
+---------------------------------
+
+<body oncontextmenu="return false;">
+
+
+
+<script>
+document.onkeydown = function(e) {
+if(event.keyCode == 123) {
+return false;
+}
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+return false;
+}
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+return false;
+}
+if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+return false;
+}
+}
+</script>
+
+<body>
+
+
+
+
+
+CSS Reference
+--------------
+
+https://www.w3schools.com/cssref/css3_pr_transform.asp
+
+=======================================================================================
+=======================================================================================
+JS EASY SAMPLE
+--------------
+
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onmouseover
+
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onmousemove_over_enter
+
+
+BOOTSTRAP 4
+===========
+
+BT4 NAV HOVER DROP DOWN
+-----------------------
+
+<script> $('ul.navbar-nav li.dropdown').hover(function() { $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500); }, function() { $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500); }); </script>
+
+OR MY SAVED LINK IN W3SCHOOLS
+
+https://www.w3schools.com/code/tryit.asp?filename=FWQISMKJ8WJQ 
+
+
+bootstrap 4 nav break point
+--------------------------- 
+
+https://www.codeply.com/go/n4Pn4aB695
+
+https://www.codeply.com/go/J70zkpygvk
+
+https://stackoverflow.com/questions/19827605/change-bootstrap-navbar-collapse-breakpoint-without-using-less
+
+
+
+
+
+
+
+
+
+
+
+
+w3c validation w3cvalidation
+----------------------------
+https://validator.w3.org/
+
+COLOR COMBINATION
+-----------------
+https://bootsnipp.com/snippets/45vlK
+
+http://www.dirdev.com/link/bootsnipp
+
+http://moviesincolor.com/
+
+
+PSD tutorials link 
+------------------
+http://www.webtipsforyou.com/photoshop-masterclass/
+
+Retouching + Color Grading psd Tutorial
+https://www.youtube.com/watch?v=6GXeCV4AExk
+https://www.youtube.com/watch?v=ny9zyWi_VRM
+
+dual color face ..... and    bg change
+---------------------------------------
+https://www.youtube.com/watch?v=u6zFkVYMgWw
+
+
+
+MY Live Site Link
+
+
+1) http://westavenuegroup.com.au/
+
+PHP Link
+1) http://dreamsite.com.au/PHP/ymc/
+2) http://dreamsite.com.au/PHP/maleny_medical/
+
+HTML link
+1) http://dreamsite.com.au/HTML/swan/
+2)http://dreamsite.com.au/HTML/dreamvision/
+
+
+http://www.guppyfoundation.com/
+
+https://www.liveyourbestlifeinsanfrancisco.com/
+
+https://www.bergencomputersolutions.com/bergencomputersolutions-computer-repair/
+
+http://www.njsportshots.com/
+
+
+https://nonviolentcommunication.com/aboutnvc/healthybodyimage-private.htm
+
+https://outboardlistings.com/
+
+https://centralwellness.zenoti.com/
+
+https://www.dogleggs.com/
+
+https://tipestry.com/
+
+
+https://lompocwinefactory.com/
+
+http://cyclonediamond.com/contact-us/
+
+http://dignity1.com/
+
+https://www.liveyourbestlifeinsanfrancisco.com/
+
+http://njsportshots.com
+
+https://www.bergencomputersolutions.com/
+
+https://nextdayhair.com/       (shopify)
+
+https://boldcitymotorsports.com/pages/shop     (shopify)
+
+https://www.translingua-translations.com/
+
+
+ 

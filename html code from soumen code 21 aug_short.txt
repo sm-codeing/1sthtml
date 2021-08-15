@@ -1,0 +1,547 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="./css/stsheet.css">
+
+<link rel="stylesheet" href="css/stsheet.css">
+<link rel="stylesheet" href="./css/animation_daneden.css">
+
+<link rel="stylesheet" href="css/animation_daneden.css">
+
+
+
+<script type="text/javascript" src="./js/jssor.js"></script>
+
+<script type="text/javascript" src="js/jssor.js"></script>
+ 
+<img src="images/ban_1.jpg">
+<img class="img-fluid" src="./images/footer_logo.png">
+<img class="img-fluid" src="../pic1.jpg">
+
+
+<style>
+
+
+<!--in css file-->
+
+import awesome 4
+@import "font-awesome.css";
+
+import awesome 5
+@import "../font/css/all.css";
+
+
+in css background
+ content: url(../images/ph.png);
+ 
+ 
+@import "font-awesome.css";
+
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
+
+@media( max-width : 585px ){
+
+.xyz{
+	background: url(navi_2.png);
+	
+	background: url(../images/ban_1.jpg);
+	
+	background: #30c url(images/call_pic.png) 60% 6% no-repeat;
+	
+	
+	background: url(images/call_pic.png) 62px 11px no-repeat #0CC;
+	
+	
+	background: url(new_ico.png) 5% 10% no-repeat, url(CART_ICO.png) 95% 5% no-repeat, url(save_ico.png) 4% 88% no-repeat, url(call_ICO.png) 96% 93% no-repeat #FC9;
+	
+	background-size: 3.5%, 3%, 4%, 2.5%;
+	
+	}
+	
+}
+
+  a:before {
+   font: normal normal normal 14px/1 FontAwesome;
+   }
+  a:before {
+   font-family: "Font Awesome 5 Free";
+   content: "\f095";
+   display: inline-block;
+   padding-right: 3px;
+   vertical-align: middle;
+   font-weight: 900;
+}
+
+div.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+
+
+#menu li:not(:first-child):before {
+    padding-left: 6px;
+    padding-right: 10px;
+    content: '|'
+	/*border-left:2px solid red;*/
+}
+
+
+
+/***** bg ratio start ******/
+
+.prt{
+    width: 100%;
+}
+.prt figure{
+    padding-top: 36.56%;  /*  1920/702=2.735 , 100/2.735 = 36.56%  */ 
+    display: block;
+    background: url("https://st.fl.ru/images/landing/bg2.jpg") no-repeat center top;
+    background-size: cover;  
+}
+
+
+https://css-tricks.com/aspect-ratio-boxes/
+
+https://stackoverflow.com/questions/30319743/fit-div-size-to-background-image
+
+/******* bg ratio end *********/
+
+/*side sticky
+
+bg ratio
+
+//  fontawesome on css
+
+nav under line animation
+
+*/
+
+</style>
+
+
+<style>
+.nv{
+	width:150px;
+	height:50px;
+	position:relative;
+	padding-bottom:10px;
+	}
+
+.nv::after {
+    background: #cc1402 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 3px;
+    /*left: 0;*/
+	right:0;
+    position: absolute;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    width: 0px;
+}
+
+
+ .nv:hover::after {
+    width: 100%;
+}
+
+
+
+
+
+</style>
+<a class="nv"> Home </a>
+
+
+
+
+<br />
+<br />
+<style>
+
+a.cnv{
+	position:relative;
+	padding-bottom:10px;}
+	
+	
+a.cnv:hover::before {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+
+
+a.cnv::before {
+    background: #cc1402;
+    -webkit-transition-delay: 0.4s;
+    transition-delay: 0.4s;
+}
+
+a.cnv::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    -webkit-transform: scale3d(0, 1, 1);
+    transform: scale3d(0, 1, 1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+        transition-delay: 0s;
+}
+
+//// center a image
+
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  height: 400px;
+  background-color: DodgerBlue;
+}
+
+//// like bt pannel box
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;;
+  
+  width:80%;
+  margin:0 auto;
+}
+
+//// break fleax
+		
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+ 
+  flex-flow:wrap;
+
+}
+
+
+</style>
+
+<a class="cnv"> Home </a>
+
+
+
+<style>
+.demo-2, .demo-1{
+  background-image:url('https://cdn.pixabay.com/photo/2018/06/30/09/31/background-image-3507320_960_720.jpg');
+  background-size:cover;
+  background-position:50%;
+  background-repeat:no-repeat;
+}
+svg{
+  width:100%;
+  display:block;
+  visibility:hidden;
+}
+
+
+.demo-1{width:100%}
+.demo-2{width:40%}
+
+
+
+</style>
+
+
+<style>
+
+.sticky{
+ padding-top: 0px;
+ padding-bottom:0px;
+  position:fixed;
+  width:100%;
+  z-index:999999999999999999999999999;
+  
+  -webkit-animation-duration: .1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  -webkit-animation-name:fadeInUp; animation-name:fadeInUp;}
+  
+</style>
+
+
+<style>
+
+
+#myHeader{
+set animation -webkit-transition: all 0.8s ease;
+transition: all 0.8s ease;
+
+}
+
+#myHeader.sticky{
+ padding-top: 0px;
+ padding-bottom:0px;
+  position:fixed;
+  top:0px;
+  display:block;
+  width:100%;
+  z-index:999999999999999999999999999;
+  
+  -webkit-animation-duration: .1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  -webkit-animation-name:fadeInUp; animation-name:fadeInUp;}
+  
+  
+  
+  
+  /* Animation */
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
+}
+
+.animatedFadeInUp {
+    opacity: 0
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+}
+</style>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+</head>
+<body>
+<br>
+<div class="zpage-wrapper">
+  <style>
+
+
+ .mycontainer {
+  /*max-width: 1000px;
+  margin: 0 auto;*/
+  position: relative;
+}
+
+ .mycontainer:before,
+.mycontainer:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+ .sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 80px;
+  zmargin-top: 75px;
+  float: left;
+  zpadding: 20px;
+  zwidth: 30%;
+}
+
+ .content {
+  float: left;
+  zpadding: 20px;
+  zwidth: 70%;
+}
+</style>           
+                
+                <div class="mycontainer">
+                <div class="sticky">
+  <img src="img_avatar.png" alt="Pineapple">
+</div>
+  <div class="content">
+  <h2>Scroll Down</h2>
+  <p>
+    The image will "stick" to the screen when you reach its scroll position.</p>
+  
+</div>
+
+</div>
+
+
+
+//  bootstrap 4 class
+
+.navbar-expand-sm, .navbar-expand-md,
+
+.col-12,  .col-sm-12, .col-md-12,   .col-lg-12 ,.col-xl-12
+
+.mr-auto   .mx-auto , .ml-auto,  .ml-md-auto,  .my-auto
+
+.bg-danger ,  .bg-dark 
+
+.border-info, .border-light  
+
+.mr-2, .mr-3, 
+
+.mb-2, .mb-4
+
+.pr-1, .pr-2
+
+.pl-5, .pl-4
+
+
+
+//   height
+.h-25 , .h-50, .h-75 , .h-100
+
+// circle div or image
+.rounded-circle
+
+
+// border  
+
+<span class="border border-warning"></span>
+
+.img-fluid
+
+.media-left, media-middle, media-right, .media-bottom   
+
+.media , .media-body ,  .align-self-start , .align-self-center , .align-self-end
+
+//vertical-alignment 
+.align-baseline, .align-top, .align-middle, .align-bottom, .align-text-bottom, .align-text-top 
+ 
+// order like pull push 
+
+.order-sm-2, .order-md-1,  .order-3,  .order-first,  .order-last
+
+// offset
+
+.offset-md-3,  .offset-sm-3
+
+
+
+.d-flex
+.d-inline-flex
+.d-sm-flex
+.d-sm-inline-flex
+.d-md-flex
+.d-md-inline-flex
+.d-lg-flex
+.d-lg-inline-flex
+.d-xl-flex
+.d-xl-inline-flex 
+ 
+ 
+//  content middle top to bottom -vertical middle
+
+.my-auto , mx-auto 
+
+// bootstrap 4 & 5 nav icon color change
+//// can be put any where is in style css file or in inside html page head tag
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(102 0 204)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+
+
+//  bootstrap media query
+
+https://getbootstrap.com/docs/4.0/content/typography/
+
+@include media-breakpoint-up(sm) {  }
+
+@include media-breakpoint-up(md) {  }
+
+
+
+
+
+bring lmage in wp
+-----------------
+
+<img src="<?php echo bloginfo('url');?>/wp-content/uploads/2019/11/logo_handyman.png" alt="">
+
+bring css in wp
+-----------------
+
+<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/bootstrap.min.css">
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+// ruf bootstrap
+
+Hidden on all	.d-none
+Hidden only on xs	.d-none .d-sm-block
+Hidden only on sm	.d-sm-none .d-md-block
+Hidden only on md	.d-md-none .d-lg-block
+Hidden only on lg	.d-lg-none .d-xl-block
+Hidden only on xl	.d-xl-none
+Hidden only on xxl	.d-xxl-none
+Visible on all	.d-block
+Visible only on xs	.d-block .d-sm-none
+Visible only on sm	.d-none .d-sm-block .d-md-none
+Visible only on md	.d-none .d-md-block .d-lg-none
+Visible only on lg	.d-none .d-lg-block .d-xl-none
+Visible only on xl	.d-none .d-xl-block .d-xxl-none
+Visible only on xxl	.d-none .d-xxl-block
