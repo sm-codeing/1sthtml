@@ -1,0 +1,273 @@
+@import "../font/css/all.css";
+ @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+ul {
+	padding:0;
+}
+ul li {
+	list-style-type:none;
+}
+html {
+/*font-size:62.5%;
+	font-size:100%;*/
+	}
+body {
+	font-family: 'Roboto', sans-serif;
+}
+h1, h2, h3, h4, h5 {
+	font-family: 'Oswald', sans-serif;
+}
+/*h1 {
+	font-size: 4.5rem;
+	font-weight: 700;
+}
+h2 {
+	font-size: 3.8rem;
+	font-weight: 700;
+}
+
+
+h3 {
+	font-size: 3rem;
+	font-weight: 700;
+}
+
+h4 {
+	font-size: 2.3rem;
+	font-weight: 700;
+}
+
+h5 {
+	font-size: 1.8rem;
+	font-weight: 700;
+}
+
+h6 {
+	font-size: 1.3rem;
+	font-weight: 700;
+}
+
+
+p{
+	font-size:1.1rem}
+
+ a{
+	font-size:1.5rem}
+	
+ div{
+	font-size:1.5rem}
+body{
+	font-size:2rem}
+
+*/
+
+
+a:hover {
+	text-decoration:none;
+}
+a:focus {
+	outline:none;
+}
+.btn:focus {
+	box-shadow:inherit;
+}
+.form-control:focus {
+	box-shadow:inherit;
+}
+.d_flex {
+	display:flex;
+}
+.cu_m_0 {
+	margin:0;
+}
+.cu_p_0 {
+	padding:0;
+}
+.cu_ml_5 {
+	margin-left: 3rem;
+}
+.cu_mr_5 {
+	margin-right: 3rem;
+}
+.cu_py_6 {
+	margin-top:4rem;
+	margin-bottom:4rem;
+}
+.cu_py_5_fst {
+	margin-top:6rem;
+	margin-bottom:3rem;
+}
+.cu_py_5 {
+	margin-top:3rem;
+	margin-bottom:3rem;
+}
+.cu_py_4_fst {
+	margin-top:3rem;
+	margin-bottom:1.5rem;
+}
+.cu_py_4 {
+	margin-top:1.5rem;
+	margin-bottom:1.5rem;
+}
+.cu_my_5 {
+	padding:3rem 0rem;
+}
+.cu_my_4 {
+	padding:1.5rem 0rem;
+}
+.nt_chld_aftr li:not(:first-child):after {
+	content: '|';
+	position: absolute;
+	top: 11px;
+	color:#fff;
+	left: 0px;
+	font-size: 25px;
+}
+.nt_chld li:not(:first-child) {
+	margin-left:40px;
+	padding-left:40px;
+}
+.top_bar {
+	background:#1f1f29;
+}
+/**********  sticky nav bar ************/
+
+.navbar {
+	-webkit-transition: all 0.8s ease 0s;
+	transition: all 0.8s ease 0s;
+	padding:30px;
+	font-size:20px;
+/*	background:#0CF;*/
+	height:85px;
+}
+.sticky {
+	position:fixed;
+	top:0px;
+	color:#000;
+	z-index:999999;
+	width:100%;
+	padding:15px 10px;
+	height:50px;
+	margin:0px;
+	z-index:9999999999999999999999999999;
+	opacity:1;
+	/*background:#ffb400;*/
+	background:#000;
+}
+.fxd {
+	padding:0px 0px;
+	/*background:red;*/
+	-webkit-transition: all 0.1s ease 0s;
+	transition: all 0.1s ease 0s;
+	color:green;
+	position:fixed;
+	width:100%;
+}
+.fxd.sticky {
+	opacity:1;
+	top:0px;
+	/*height:20px;*/
+	margin-bottom:15px;
+	background:red;
+	background:none;
+}
+/****** scroll to top button  *****/
+
+.back-to-top {
+	cursor: pointer;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	display:none;
+}
+/**** slider start *****/
+
+
+
+    .slick-prev:before, .slick-next:before {
+	color: #555a6e;
+}
+
+
+
+
+/******* slider end ********/
+
+
+
+
+
+/************=========***************/
+	
+	
+
+ @media( max-width : 980px ) {
+}
+ @media( max-width : 768px ) {
+html {
+	font-size:55%;
+}
+h1 {
+	font-size: clamp(29px, 3rem, 198px) !important;
+}
+h2 {
+	font-size: clamp(24px, 2.8rem, 150px) !important;
+}
+h3 {
+	font-size: clamp(21px, 2.3rem, 140px) !important;
+}
+h4 {
+	font-size: clamp(18px, 2rem, 130px) !important;
+}
+h5 {
+	font-size: clamp(16px, 1.6rem, 125px) !important;
+}
+h6 {
+	font-size: clamp(15px, 1.2rem, 125px) !important;
+}
+body, p, a, div {
+	font-size: clamp(14px, 100%, 50px) !important;
+}
+
+.sticky {
+  
+    padding: 0px 0px;
+   
+}
+.navbar {
+   
+    padding: 0px 0px !important;
+  
+}
+.navbar-brand{
+	width:80px;
+	margin-left: 15px;}
+.sticky  .navbar-brand{
+	width:50px}
+	
+
+.navbar-toggler {
+    margin-right: 15px;
+}
+	
+	
+.navbar-collapse {
+	background:#ccc;
+	padding-left: 15px;
+	padding-right:15px;
+}
+}
+ @media( max-width : 580px ) {
+body, p, a, div {
+	font-size: clamp(12px, 100%, 50px) !important;
+}
+}
+ @media( max-width : 480px ) {
+html {
+	font-size:40%;
+}
+}
+ @media( max-width : 380px ) {
+html {
+	font-size:35%;
+}
+}
