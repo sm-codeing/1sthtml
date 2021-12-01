@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+
+<style>
+/* Style the buttons */
+.grd_btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Style the active class, and buttons on mouse-over */
+.grd_active, .grd_btn:hover {
+  background-color: #666;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+
+
+
+
+<div id="grd_list">
+  <button class="btn grd_btn">1</button>
+  <button class="btn  grd_btn grd_active">2</button>
+  <button class="btn  grd_btn">3</button>
+  <button class="btn  grd_btn">4</button>
+  <button class="btn  grd_btn">5</button>
+</div>
+
+<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("grd_list");
+var btns = header.getElementsByClassName(" grd_btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("grd_active");
+  current[0].className = current[0].className.replace(" grd_active", "");
+  this.className += " grd_active";
+  });
+}
+</script>
+</body>
+</html>
