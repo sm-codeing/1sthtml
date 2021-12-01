@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery slide Left and Right Toggle Effect</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+<style>
+* {
+  box-sizing: border-box;
+  padding:0px; 
+}
+.box{
+	overflow:hidden;
+	 margin-left: -70px;
+   /* margin-right: -29px;*/}
+#parent {
+  display: flex;
+  flex-wrap: wrap;
+  
+  justify-content: space-between;
+   /* margin-left: -40px;
+    margin-right: -29px;*/
+}
+
+.child {
+  height: 50px;
+  background: red;
+  flex: 1;
+  min-width: 23%;
+    border: 5px solid #0ff;
+    margin-left: 62px;
+
+ /* min-width: 25%;
+  border: 5px solid #0ff;*/
+}
+
+@media (max-width: 700px) {
+  .child {
+    min-width: 40%; 
+	border: 5px solid #ff0;
+  }
+}
+
+@media (max-width: 400px) {
+  .child {
+    min-width: 100%; 
+	border: 5px solid #30c;
+  }
+}
+</style>
+<div class="box"><div id="parent">
+  <div class="child"></div>
+  <div class="child"></div>
+  <div class="child"></div>
+  <div class="child"></div>
+  <div class="child"></div>
+  <div class="child"></div>
+  <div class="child"></div>
+  <div class="child"></div>
+  <div class="child 1"></div>
+  <div class="child 2"></div>
+   <div class="child 3"></div>
+</div> </div>
+
+
+
+
+
+<!--<div class="cu_item">
+
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+  <div>7</div>
+  <div>8</div>
+</div>-->
+</body>
+</html>
