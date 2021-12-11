@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>1div <i class="fa fa-th-large" aria-hidden="true"></i></title>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
+  <link href="bootstrap_v4.css" rel="stylesheet">
+
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body class="zbg--blue">
+ 
+ 
+<div class="container">  
+  <style>
+    .flx_grd {
+      display:  grid;
+      grid-gap: 10px;
+     
+      grid-template-columns: minmax(min-content, 23%)  minmax(min-content, 23%)  minmax(min-content, 23%) 400px;
+      /* grid-template-columns: minmax(min-content, 26%)  minmax(min-content, 26%)  minmax(min-content, 26%)  minmax(min-content, 30%); */
+       /*
+      //////////  to define a specific width of first div use below code ( here need to use grid instead of flex)
+        display: grid;
+     grid-template-columns: minmax(min-content, 25%) minmax(auto, 1fr) 0px; */
+      /* grid-template-columns: repeat(auto-fit, minmax(186px, 1fr)); */
+     }  
+     .grd_cl{
+       border: 2px solid red;
+       margin-bottom: 50px;
+       padding: 15px;
+      
+      
+     }
+     .dw-pnl:nth-last-child(){
+      min-width: 30%;
+      width: min(200px, 200px);
+    
+  } 
+
+
+     
+@media (max-width: 900px) {
+  .flx_grd {
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, 49%);
+    justify-content: space-between;
+
+     }  
+    
+}
+@media (max-width: 800px) {
+  .flx_grd {
+      display:  inherit;
+     
+     }  
+    
+}
+   
+  </style>
+   <div class="flx_grd">
+      <div class="grd_cl ">
+        <div class=""> 
+          <img class="img-fluid rounded-circle" src="https://picsum.photos/id/684/90/90" alt=""> 
+        <h1>Lorium dlr epsum </h1>  </div>
+       <p> Item with flexible width but a minimum of 200 pixels.     My fourth letter is awesome.  My fourth letter is awesome. </p>
+      </div>
+      <div class="grd_cl ">
+        <div class=""> 
+          <img class="img-fluid rounded-circle" src="https://picsum.photos/id/684/90/90" alt="">         <h1>Lorium epsum</h1>  </div>
+       <p> Item with flexible width but a minimum of 200 pixels.     My fourth letter is awesome.  My fourth letter is awesome. </p>
+      </div>
+      <div class="grd_cl ">
+        <div class=""> 
+          <img class="img-fluid rounded-circle" src="https://picsum.photos/id/684/90/90" alt="">         <h1>Lorium</h1>  </div>
+       
+       <p> Item with flexible width but a minimum of 200 pixels.     My fourth letter is awesome.  My fourth  </p>
+
+      </div>
+      <!-- <div  class="grd_cl d-flex">
+        <p class="clr_red my-auto">
+  
+          Item with flexible width but a minimum of 200 pixels.     My fourth letter is awesome.  My fourth letter is awesome.  My fourth letter is awesome.  My fourth letter is awesome.  My fourth letter is awesome.  My fourth letter is awesome.  My fourth letter is awesome.  My fourth letter is awesome.  My fourth letter is awesome. 
+        </p>
+        
+      </div> -->
+      <div  class="grd_cl ">
+        <p>
+  
+          Item with flexible width but a minimum of 200 pixels.     My fourth letter is awesome.  My fourth letter is awesome.  My fourth letter is awesome.  My fourth letter is awesome.  My fourth letter is awesome.  My fourth letter is awesome.  My fourth letter is awesome.  My fourth letter is awesome.  My fourth letter is awesome. 
+        </p>
+        
+      </div>
+  
+     
+    </div>
+  
+  </div>
+
+    
+<style>
+
+
+
+
+            </style>
+  
+     
+</body>
+<!-- partial -->
+  
+</body>
+</html>
