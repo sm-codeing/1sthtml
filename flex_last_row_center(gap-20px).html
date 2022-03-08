@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Gzi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./bootstrap_v4.css">
+
+</head>
+
+<body>
+  <!-- <div> 
+    <h2>one div fixed width another width auto</h2>
+  <style>
+    .d-flex {
+      display: flex;
+     
+    }
+
+    .grd {
+      flex:auto;
+      border: 1px solid red;
+    }
+    .grd_1{
+      flex: 0 0 130px;
+      
+    }
+  </style>
+  <div class="d-flex">
+    <div class="grd grd_1">
+      <h1>abcd</h1>
+    </div>
+    <div class="grd">
+      <h1>abcd ddd ddd</h1>
+    </div>
+  
+
+  </div>
+</div> -->
+
+
+
+
+
+
+
+<h1>  flex justify space between and center (put all row  justify space between and last row in center)</h1>
+========================
+
+  <div class="container">
+<div class="cu_row">
+<style>
+.maindiv{display: flex;
+flex-wrap: wrap;
+justify-content: center;
+border: 1px solid red;
+}
+.cnt_dtl_pic_box{
+  margin: 10px;
+  border: 2px solid green;
+  flex: 0 1 calc(25% - 20px);
+}
+.cu_row{
+
+  margin-right: -26px;
+    margin-left: -26px;
+
+}
+
+@media (max-width: 768px){
+.cnt_dtl_pic_box {
+    font-size: clamp(14px, 1rem, 50px) !important;
+    border: 2px solid green;
+    flex: 0 1 calc(50% - 20px);
+}
+}
+</style>
+  <div class="col-12 col-md-12 zd-flex zflex-wrap zjustify-content-between img_fluid maindiv  ">
+
+
+              <div class="  cnt_dtl_pic_box zborder p-0 mb-3 bg-white">
+                <div class="cont_dtl_pic efct_zom">
+                  <img class="zom_pic" src="images/cnt_dtl_pic1.png" alt="">
+                </div>
+
+
+                <div class="cont_dtl_pic_dec efct_zom bg_pic_left bg-white py-2  px-2">
+
+                  <p class="lrg_txt m-0">
+                    North America
+                  </p>
+
+                
+                    <p class="m-0">
+                    
+                      Stock Exchanges Include: New York Stock Exchange (NYSE), Nasdaq Technology (NASDAQ), Mexico (MEXI), Canada (TSE), Canadian Venture (TSXV)
+                    </p>
+
+                </div>
+
+
+
+              </div>
+              <div class="  cnt_dtl_pic_box zborder p-0 mb-3">
+                <div class="cont_dtl_pic efct_zom">
+                  <img class="zom_pic" src="images/cnt_dtl_pic2.png" alt="">
+                </div>
+
+
+                <div class="cont_dtl_pic_dec efct_zom bg_pic_left bg-white py-2  px-2">
+                  <p class="lrg_txt m-0">
+                    Western Europe
+                  </p>
+                  <p class="m-0">
+                    Stock Exchanges Include: London (LSE), France (SBF), Portugal (BVL), Italy (BMV), Vienna (VSE),
+                    Swiss Electronic Bourse (EBS), SIX Swiss (VIRTX)
+                  </p>
+                </div>
+
+
+
+              </div>
+
+              <div class="  cnt_dtl_pic_box zborder p-0 mb-3">
+                <div class="cont_dtl_pic efct_zom">
+                  <img class="zom_pic" src="images/cnt_dtl_pic3.png" alt="">
+                </div>
+
+
+                <div class="cont_dtl_pic_dec efct_zom bg_pic_left bg-white py-2  px-2">
+                  <p class="lrg_txt m-0">
+                    Scandanvaia and
+                    Eastern Europe
+                  </p>
+                  <p class="m-0">
+                    Stock Exchanges Include: Sweeden (SFB), Norway (OSE), Russia (MOEX), Ukraine (WSE)
+
+                  </p>
+                </div>
+
+
+
+              </div>
+              <div class="  cnt_dtl_pic_box zborder p-0 mb-3">
+                <div class="cont_dtl_pic efct_zom">
+                  <img class="zom_pic" src="images/cnt_dtl_pic4.png" alt="">
+                </div>
+
+
+                <div class="cont_dtl_pic_dec efct_zom bg_pic_left bg-white py-2  px-2">
+                  <p class="lrg_txt m-0">
+                    Asia, Oceania, and the
+                    Middle East
+                  </p>
+                  <p class="m-0">
+
+                    Stock Exchanges Include: Isreal (TASE), Shanghai (SSE), Shenzhen (SZE), Hong Kong (SEHK),
+                    Singapore (SGX), Japan (TSEJ),
+                    Australia (ASX)
+
+                  </p>
+                </div>
+
+
+
+              </div>
+              <div class="  cnt_dtl_pic_box zborder p-0 mb-3">
+                <div class="cont_dtl_pic efct_zom">
+                  <img class="zom_pic" src="images/cnt_dtl_pic5.png" alt="">
+                </div>
+
+
+                <div class="cont_dtl_pic_dec efct_zom bg_pic_left bg-white py-2  px-2">
+                  <p class="lrg_txt m-0">
+                    Biotechnology
+                  </p>
+                  <p class="m-0">
+
+                    Our specialty. Applies worldwide.
+                  </p>
+                </div>
+
+
+
+              </div>
+              <div class="  cnt_dtl_pic_box zborder p-0 mb-3">
+                <div class="cont_dtl_pic efct_zom">
+                  <img class="zom_pic" src="images/cnt_dtl_pic6.png" alt="">
+                </div>
+
+
+                <div class="cont_dtl_pic_dec efct_zom bg_pic_left bg-white py-2  px-2">
+                  <p class="lrg_txt m-0">
+                    Cryptocurrency
+                  </p>
+                  <p class="m-0">
+                    For those who want to avoid direct exposure. Applies
+                    worldwide.
+
+                  </p>
+                </div>
+
+
+
+              </div>
+              <div class="  cnt_dtl_pic_box zborder p-0 mb-3">
+                <div class="cont_dtl_pic efct_zom">
+                  <img class="zom_pic" src="images/cnt_dtl_pic7.png" alt="">
+                </div>
+
+
+                <div class="cont_dtl_pic_dec efct_zom bg_pic_left bg-white py-2  px-2">
+                  <p class="lrg_txt m-0">
+                    Psychedelics
+                  </p>
+                  <p class="m-0">Feed your head and your wallet. Applies worldwide.</p>
+                </div>
+
+
+
+              </div>
+
+
+
+
+
+            </div>
+
+</div>
+
+            </div>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- script end -->
+
+<script src="js/custom.js"></script>
+
+
+
+</html>
