@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title> flex gap 20px</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap_v4.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./css/slick.css">
+  <link rel="stylesheet" type="text/css" href="./css/slick-theme.css">
+  
+  <!--<link rel="stylesheet" href="css/style.css">-->
+  
+  <link href="css/stsheet.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+<style>
+  
+
+/* 
+
+  @media (max-width: 768px){
+  .cnt_dtl_pic_box {
+    font-size: clamp(14px, 1rem, 50px) !important;
+    border: 2px solid green;
+    flex: 0 1 calc(50% - 20px);
+}
+}
+ */
+
+</style>
+
+<style>
+
+
+
+  
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flexbox > div {
+  /*
+    1/3  - 3 columns per row
+    10px - spacing between columns 
+  */
+  box-sizing: border-box;
+  /* margin: 10px 10px 0 0; */
+  margin: 10px 60px 0 0;
+
+  outline: 1px solid red;
+  /* width: calc(1/3*100% - (1 - 1/3)*10px); */
+  width: calc(1/4*100% - (1 - 1/4)*60px);
+}
+
+/*
+  align last row columns to the left
+  3n - 3 columns per row
+*/
+.flexbox > div:nth-child(4n) {
+  margin-right: 0;
+}
+
+.flexbox::after {
+  content: '';
+  flex: auto;
+}
+
+/*
+  remove top margin from first row
+  -n+3 - 3 columns per row 
+*/
+.flexbox > div:nth-child(-n+4) {
+  margin-top: 0;
+}
+
+</style>
+<body>
+  <div class="cc p-5 bg-info">
+    11111   11111
+    </div>
+  <div class="container">
+
+    <div class="flexbox">
+      <div>col 1</div>
+      <div>col 2</div>
+      <div>col 3</div>
+      <div>col 4</div>
+      <div>col 5</div>
+      <div>col 6</div>
+      <div>col 7</div>
+      <div>col 8</div>
+      <div>col 8</div>
+      <div>col 8</div>
+    </div>
+
+  </div>
+<div class="cc p-5 bg-info">
+aaaaa
+</div>
+
+</body>
+
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap_v4.js"></script>
+<script src="./js/slick.js" type="text/javascript" charset="utf-8"></script>
+<script>
+ 
+</script>
+<!-- script end -->
+
+<script src="js/custom.js"></script>
+<script>
+AOS.init({
+ duration: 1200
+});
+
+</script>
+
+
+
+</html>
