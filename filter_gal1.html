@@ -1,0 +1,485 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Gzi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap_v4.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./css/slick.css">
+  <link rel="stylesheet" type="text/css" href="./css/slick-theme.css">
+  
+  <!--<link rel="stylesheet" href="css/style.css">-->
+  
+  <link href="css/stsheet.css" rel="stylesheet">
+
+</head>
+<style>
+  
+
+  body{margin-top:20px;}
+.filtering {
+    margin-bottom: 40px;
+}
+.filtering span {
+    border-bottom: 2px solid transparent;
+    color: #282b2d;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-right: 20px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.filtering span:last-child {
+    margin: 0;
+}
+.filtering .active {
+    border-color: #ccde02;
+    color: #ccde02;
+}
+.portfolio-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+.portfolio-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transition: all 500ms ease;
+}
+.portfolio-wrapper .portfolio-image img {
+    transform: scale(1.2);
+    will-change: transform;
+    transition: all 0.5s ease;
+    width: 100%;
+}
+.portfolio-wrapper:hover .portfolio-image img {
+    transform: none;
+}
+.portfolio-overlay:before {
+    position: absolute;
+    display: inline-block;
+    top: 15px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.36);
+    content: "";
+    opacity: 0;
+    transition: all 0.5s ease;
+    transform: scale(0.85);
+}
+.portfolio-overlay .portfolio-content {
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    padding: 0 35px;
+}
+.portfolio-content h4 {
+    color: #000;
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+.portfolio-content p {
+    color: #000;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+.portfolio-content > a {
+    line-height: 42px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #000;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+.portfolio-wrapper:hover .portfolio-overlay {
+    background-color: rgba(204, 222, 2, 0.85);
+}
+.portfolio-wrapper:hover .portfolio-overlay:before {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+.portfolio-wrapper:hover .portfolio-overlay .portfolio-content {
+    transform: translateY(50%);
+    transition: transform 0.5s ease;
+    opacity: 1;
+}
+@media screen and (max-width: 1199px) {
+    .portfolio-content h4 {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 991px) {
+    .portfolio-content h4 {
+        margin-bottom: 10px;
+    }
+    .portfolio-content p {
+        font-size: 15px;
+    }
+    .portfolio-content > a {
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .portfolio-content h4 {
+        font-size: 17px;
+    }
+    .portfolio-content p {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 575px) {
+    .portfolio-content h4 {
+        font-size: 16px;
+    }
+}
+.grid .grid-item {
+    position: relative;
+    overflow: hidden;
+}
+.grid .grid-item .portfolio-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+.grid .grid-item .portfolio-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transition: all 500ms ease;
+}
+.grid .grid-item .portfolio-wrapper .portfolio-image img {
+    transform: none;
+    will-change: transform;
+    transition: none;
+    width: 100%;
+}
+.grid .grid-item .portfolio-wrapper:hover .portfolio-image img {
+    transform: none;
+}
+.grid .grid-item .portfolio-overlay:before {
+    position: absolute;
+    display: inline-block;
+    top: 15px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.36);
+    content: "";
+    opacity: 0;
+    transition: all 0.5s ease;
+    transform: scale(0.85);
+}
+.grid .grid-item .portfolio-overlay .portfolio-content {
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+}
+.grid .grid-item .portfolio-content h4 {
+    color: #000;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.grid .grid-item .portfolio-content p {
+    color: #000;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+.grid .grid-item .portfolio-content a {
+    line-height: 36px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: #000;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+.grid .grid-item .portfolio-wrapper:hover .portfolio-overlay {
+    background-color: rgba(204, 222, 2, 0.85);
+}
+.grid .grid-item .portfolio-wrapper:hover .portfolio-overlay:before {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+.grid .grid-item .portfolio-wrapper:hover .portfolio-overlay .portfolio-content {
+    transform: translateY(50%);
+    transition: transform 0.5s ease;
+    opacity: 1;
+}
+@media screen and (max-width: 1199px) {
+    .grid .grid-item .portfolio-content h4 {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 991px) {
+    .grid .grid-item .portfolio-content h4 {
+        margin-bottom: 10px;
+    }
+    .grid .grid-item .portfolio-content p {
+        font-size: 15px;
+    }
+    .grid .grid-item .portfolio-content a {
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .grid .grid-item .portfolio-content h4 {
+        font-size: 17px;
+    }
+    .grid .grid-item .portfolio-content p {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 575px) {
+    .grid .grid-item .portfolio-content h4 {
+        font-size: 16px;
+    }
+    .grid .grid-item .portfolio-overlay:before {
+        top: 10px;
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+    }
+}
+
+
+
+</style>
+<body>
+  <section>
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="filtering col-sm-12 text-center">
+                <span data-filter="*" class="active">All</span>
+                <span data-filter=".architecture" class="">Architecture</span>
+                <span data-filter=".decor" class="">Decor</span>
+                <span data-filter=".interior" class="">Interior</span>
+            </div>
+            <div class="col-12 text-center w-100">
+                <div class="grid form-row gallery text-center">
+                    <div class="col-lg-4 col-sm-6 mb-2 grid-item interior">
+                        <div class="portfolio-wrapper">
+                            <div class="portfolio-image">
+                                <!-- <img src="https://via.placeholder.com/350x550/FF7F50/000000" alt="..." /> -->
+                       <img src="https://images.unsplash.com/photo-1541845157-a6d2d100c931?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80">
+                         
+                         
+                         
+                              </div>
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <a class="popimg ml-0" href="#">
+                                        <i class="ti-zoom-in display-24 display-md-23 display-lg-22 display-xl-20"></i>
+                                    </a>
+                                    <h4>Stylish Family Appartment</h4>
+                                    <p>[Interior]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-2 grid-item decor interior">
+                        <div class="portfolio-wrapper">
+                            <div class="portfolio-image">
+                                <!-- <img src="https://via.placeholder.com/350x350/20B2AA/000000" alt="..." /> -->
+                       <img src="https://images.unsplash.com/photo-1541845157-a6d2d100c931?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80">
+                          
+                              </div>
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <a class="popimg ml-0" href="#">
+                                        <i class="ti-zoom-in display-24 display-md-23 display-lg-22 display-xl-20"></i>
+                                    </a>
+                                    <h4>Minimal Guests House</h4>
+                                    <p>[Decor, Interior]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-2 grid-item architecture">
+                        <div class="portfolio-wrapper">
+                            <div class="portfolio-image">
+                                <!-- <img src="https://via.placeholder.com/350x350/C71585/000000" alt="..." /> -->
+                       <img src="https://images.unsplash.com/photo-1541845157-a6d2d100c931?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80">
+                         
+                         
+                              </div>
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <a class="popimg ml-0" href="#">
+                                        <i class="ti-zoom-in display-24 display-md-23 display-lg-22 display-xl-20"></i>
+                                    </a>
+                                    <h4>Modern Villa in Belgium</h4>
+                                    <p>[Architecture]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-2 grid-item interior">
+                        <div class="portfolio-wrapper">
+                            <div class="portfolio-image">
+                                <!-- <img src="https://via.placeholder.com/350x550/FF7F50/000000" alt="..." /> -->
+                                <img src="https://images.unsplash.com/photo-1541845157-a6d2d100c931?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80">
+                          
+                          
+                              </div>
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <a class="popimg ml-0" href="#">
+                                        <i class="ti-zoom-in display-24 display-md-23 display-lg-22 display-xl-20"></i>
+                                    </a>
+                                    <h4>Kitchen for Small family</h4>
+                                    <p>[Interior]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-2 grid-item architecture">
+                        <div class="portfolio-wrapper">
+                            <div class="portfolio-image">
+                                <!-- <img src="https://via.placeholder.com/350x350/FFDAB9/000000" alt="..." /> -->
+                                <img src="https://images.unsplash.com/photo-1541845157-a6d2d100c931?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80">
+                          
+                          
+                              </div>
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <a class="popimg ml-0" href="#">
+                                        <i class="ti-zoom-in display-24 display-md-23 display-lg-22 display-xl-20"></i>
+                                    </a>
+                                    <h4>Art Family Residence</h4>
+                                    <p>[Architecture]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-2 grid-item decor">
+                        <div class="portfolio-wrapper">
+                            <div class="portfolio-image">
+                              <img src="https://images.unsplash.com/photo-1541845157-a6d2d100c931?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80">
+                            </div>
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <a class="popimg ml-0" href="#">
+                                        <i class="ti-zoom-in display-24 display-md-23 display-lg-22 display-xl-20"></i>
+                                    </a>
+                                    <h4>Private House in Spain</h4>
+                                    <p>[Decor]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-2 mb-lg-0 grid-item interior">
+                        <div class="portfolio-wrapper">
+                            <div class="portfolio-image">
+                              <img src="https://images.unsplash.com/photo-1541845157-a6d2d100c931?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80">
+                            </div>
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <a class="popimg ml-0" href="#">
+                                        <i class="ti-zoom-in display-24 display-md-23 display-lg-22 display-xl-20"></i>
+                                    </a>
+                                    <h4>Minimalistic Style Appartment</h4>
+                                    <p>[Interior]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-2 mb-sm-0 grid-item decor">
+                        <div class="portfolio-wrapper">
+                            <div class="portfolio-image">
+                              <img src="https://images.unsplash.com/photo-1541845157-a6d2d100c931?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80">
+                            </div>
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <a class="popimg ml-0" href="#">
+                                        <i class="ti-zoom-in display-24 display-md-23 display-lg-22 display-xl-20"></i>
+                                    </a>
+                                    <h4>Luxury Bathroom Interior</h4>
+                                    <p>[Decor]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 grid-item architecture">
+                        <div class="portfolio-wrapper">
+                            <div class="portfolio-image">
+                              <img src="https://images.unsplash.com/photo-1541845157-a6d2d100c931?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80">
+                            </div>
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <a class="popimg ml-0" href="#">
+                                        <i class="ti-zoom-in display-24 display-md-23 display-lg-22 display-xl-20"></i>
+                                    </a>
+                                    <h4>Loft Kitchen Interior</h4>
+                                    <p>[Architecture]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</body>
+
+
+<script src="js/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous"></script>
+
+<script src="js/bootstrap_v4.js"></script>
+<script src="./js/slick.js" type="text/javascript" charset="utf-8"></script>
+<script>
+ 
+ $(function(){
+    $(".grid").masonry({ itemSelector: ".grid-item" });
+    
+    $(".filtering").on("click", "span", function () {
+        var a = $(".gallery").isotope({});
+        var e = $(this).attr("data-filter");
+        a.isotope({ filter: e });
+    });
+    $(".filtering").on("click", "span", function () {
+        $(this).addClass("active").siblings().removeClass("active");
+    });
+}) 
+</script>
+<!-- script end -->
+
+<script src="js/custom.js"></script>
+<script>
+
+
+</script>
+
+
+
+</html>
