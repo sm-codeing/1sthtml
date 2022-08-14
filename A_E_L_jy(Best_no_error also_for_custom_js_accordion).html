@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+    
+
+<div class="eventdeligation"> 
+
+    <h1>   Event Deligation  </h1>
+    <style>
+        .cc{background: #00ff00;padding: 10px;	border: 2px solid #ccc;}
+        .active{background: green;	}
+    
+    </style>
+    <div id="box" class="evnt_delig_2">
+    
+    <div class="cc">aaa<div class="cc">bbb <div class="cc">ccc	</div>	</div>	</div>
+    
+    </div>
+    
+    <br><br>
+    <div id="box" class="evnt_delig_2">
+    
+    <div class="cc active">aaa	</div>
+    <div class="cc ">bbb	</div>
+    <div class="cc ">ccc	</div>
+    </div>
+    
+     
+    
+<!--     
+    
+    
+        <script>
+    
+    var x = document.querySelectorAll(".evnt_delig_2")
+    
+    x.forEach(i => {
+        i.addEventListener('click', my_fnc)
+    })
+    
+    
+    function my_fnc (e) {
+        var y = document.querySelector(".cc.active");
+        e.target.classList.toggle("active")
+        y.classList.remove("active")
+    }
+    
+    
+    
+    </script> -->
+
+
+    <script>
+			    	
+
+			var x = document.querySelectorAll(".evnt_delig_2")
+
+			x.forEach(i => {
+				i.addEventListener('click', my_fnc)
+			})
+
+
+			function my_fnc (e) {
+				var y = document.querySelector(".cc.active");
+
+			if(e.target) {
+			e.target.classList.toggle("active")
+			}
+			if(y){
+				y.classList.remove("active")
+			}
+			}
+
+
+
+    </script>
+    
+    
+    
+     </div>
+    
+    
+    
+</body>
+</html>
