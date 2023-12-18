@@ -1,0 +1,45 @@
+/*
+Theme Name: My Basic Theme
+Author: Your Name
+Description: A basic WordPress theme
+Version: 1.0
+*/
+
+/* Add your custom styles below */
+
+/* Navigation menu styles */
+.main-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-menu li {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative; /* Add relative positioning to the list items */
+}
+
+.main-menu a {
+    text-decoration: none;
+}
+
+/* Submenu styles */
+.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.main-menu li:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu li {
+    display: block;
+    margin: 0;
+}
