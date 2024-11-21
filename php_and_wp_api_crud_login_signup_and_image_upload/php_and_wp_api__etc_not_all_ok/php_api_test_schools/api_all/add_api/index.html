@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add District (API)</title>
+    <script>
+        // Function to handle form submission using fetch API
+        async function submitForm(event) {
+            event.preventDefault(); // Prevent form from reloading the page
+
+            const districtName = document.getElementById('district_name').value;
+
+            // Prepare the data to be sent to the API
+            const data = {
+                district_name: districtName
+            };
+
+            try {
+                const response = await fetch('add_district_api.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (result.status === "success") {
+                    alert(result.message);
+                } else {
+                    alert('Error: ' + result.message);
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Insert District using API</h2>
+
+    <!-- HTML Form -->
+    <form id="districtForm" onsubmit="submitForm(event)">
+        <label for="district_name">District Name:</label>
+        <input type="text" id="district_name" name="district_name" required>
+        <br><br>
+        <input type="submit" value="Add District">
+    </form>
+
+
+
+
+
+
+
+    <h3> Display district table data</h3>
+
+   
+
+<!-- eeeeeeeeeeeeeee -->
+
+
+
+</body>
+</html>

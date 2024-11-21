@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New BDO</title>
+    <script>
+        // Function to fetch all districts and populate the dropdown
+        async function fetchDistricts() {
+            try {
+                const response = await fetch('http://localhost/php_api_test_schools/api_all/add_school_api/try_with_dst_id_bdo/api_fetch_districts.php');
+                const districts = await response.json();
+
+                const districtDropdown = document.getElementById('districtDropdown');
+                districts.forEach(district => {
+                    const option = document.createElement('option');
+                   ////-- option.value = district.dst_id;  // Set the dst_id from district
+                    option.value = district.district_name;  //--/////// Set the district_name from district
+                    option.text = district.district_name;  // Display the district name
+                    districtDropdown.appendChild(option);
+                });
+            } catch (error) {
+                alert('Error fetching districts: ' + error.message);
+            }
+        }
+
+        // Function to handle form submission and add a new BDO
+        async function addBdo(event) {
+            event.preventDefault();
+
+            const bdoName = document.getElementById('bdoName').value;
+            const districtId = document.getElementById('districtDropdown').value;
+
+            if (bdoName === '' || districtId === '') {
+                alert('Please enter all the details.');
+                return;
+            }
+
+            const data = {
+                bdo_name: bdoName,
+               //-- dst_id: districtId
+               district_name: districtId
+            };
+
+            try {
+                const response = await fetch('http://localhost/php_api_test_schools/api_all/add_school_api/try_with_dst_id_bdo/api_insert_bdo.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+                if (result.status === 'success') {
+                    alert('BDO added successfully!');
+                } else {
+                    alert('Error adding BDO: ' + result.message);
+                }
+
+                // Optionally, reset the form
+                document.getElementById('addBdoForm').reset();
+            } catch (error) {
+                alert('Error adding BDO: ' + error.message);
+            }
+        }
+
+        // Fetch the districts when the page loads
+        window.onload = fetchDistricts;
+    </script>
+</head>
+<body>
+    <h2>Add New BDO</h2>
+
+    <!-- Form to add a new BDO -->
+    <form id="addBdoForm" onsubmit="addBdo(event)">
+        <label for="bdoName">BDO Name:</label>
+        <input type="text" id="bdoName" name="bdo_name" required>
+        <br><br>
+
+        <label for="districtDropdown">Select District:</label>
+        <select id="districtDropdown" name="dst_id" required>
+            <option value="" disabled selected>Select a district</option>
+            <!-- Districts will be populated here dynamically -->
+        </select>
+        <br><br>
+
+        <input type="submit" value="Add BDO">
+    </form>
+</body>
+</html>

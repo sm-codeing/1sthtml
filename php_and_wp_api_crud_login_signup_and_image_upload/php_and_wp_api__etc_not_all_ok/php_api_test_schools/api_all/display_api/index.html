@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>District List</title>
+    <script>
+        // Function to fetch and display all districts
+        async function fetchDistricts() {
+            try {
+                const response = await fetch('display_district_api.php'); // Call the PHP API
+                const districts = await response.json();  // Parse the response as JSON
+
+                // Clear the current content in the district list div
+                const districtListDiv = document.getElementById('districtList');
+                districtListDiv.innerHTML = '';
+
+                // Loop through the districts and display them in a div structure
+                districts.forEach(district => {
+                    const districtDiv = document.createElement('div');
+                    districtDiv.classList.add('district');
+
+                    districtDiv.innerHTML = `
+                        <p><strong>ID:</strong> ${district.id}</p>
+                        <p><strong>District Name:</strong> ${district.district_name}</p>
+                        <p><strong>District ID:</strong> ${district.dst_id}</p>
+                        <hr>
+                    `;
+
+                    districtListDiv.appendChild(districtDiv);
+                });
+            } catch (error) {
+                alert('Error fetching district data: ' + error.message);
+            }
+        }
+
+        // Fetch all districts when the page loads
+        window.onload = fetchDistricts;
+    </script>
+    <style>
+        .district {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h2>All Districts</h2>
+    <div id="districtList">
+        <!-- Districts will be dynamically populated here -->
+    </div>
+</body>
+</html>

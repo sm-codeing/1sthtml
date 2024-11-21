@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New School</title>
+    <script>
+        // Function to fetch all districts and populate the dropdown
+        async function fetchDistricts() {
+            try {
+                const response = await fetch('api_fetch_districts.php');
+                const districts = await response.json();
+
+                const districtDropdown = document.getElementById('districtDropdown');
+                districts.forEach(district => {
+                    const option = document.createElement('option');
+                    option.value = district.id;  // Set the district id
+                    option.text = district.district_name;  // Display the district name
+                    districtDropdown.appendChild(option);
+                });
+            } catch (error) {
+                alert('Error fetching districts: ' + error.message);
+            }
+        }
+
+        // Function to handle form submission and add a new school
+        async function addSchool(event) {
+            event.preventDefault();
+
+            const schoolName = document.getElementById('schoolName').value;
+            const districtId = document.getElementById('districtDropdown').value;
+
+            if (schoolName === '' || districtId === '') {
+                alert('Please enter all the details.');
+                return;
+            }
+
+            const data = {
+                school_name: schoolName,
+                dst_id: districtId
+            };
+
+            try {
+                const response = await fetch('api_insert_school.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+                if (result.status === 'success') {
+                    alert('School added successfully!');
+                } else {
+                    alert('Error adding school: ' + result.message);
+                }
+
+                // Optionally, reset the form
+                document.getElementById('addSchoolForm').reset();
+            } catch (error) {
+                alert('Error adding school: ' + error.message);
+            }
+        }
+
+        // Fetch the districts when the page loads
+        window.onload = fetchDistricts;
+    </script>
+</head>
+<body>
+    <h2>Add New School</h2>
+
+    <!-- Form to add a new school -->
+    <form id="addSchoolForm" onsubmit="addSchool(event)">
+        <label for="schoolName">School Name:</label>
+        <input type="text" id="schoolName" name="school_name" required>
+        <br><br>
+
+        <label for="districtDropdown">Select District:</label>
+        <select id="districtDropdown" name="dst_id" required>
+            <option value="" disabled selected>Select a district</option>
+            <!-- Districts will be populated here dynamically -->
+        </select>
+        <br><br>
+
+        <input type="submit" value="Add School">
+    </form>
+
+    <br><br>
+
+    <!-- Optional: Display added schools (just an example placeholder) -->
+    <h3>All Schools</h3>
+    <div id="schoolList">
+        <!-- JavaScript can dynamically insert a list of added schools here -->
+    </div>
+</body>
+</html>
