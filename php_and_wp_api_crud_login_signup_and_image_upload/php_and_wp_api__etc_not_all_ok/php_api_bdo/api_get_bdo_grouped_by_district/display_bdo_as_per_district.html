@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDO Data Grouped by District</title>
+    <style>
+        .district-group {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .district-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color:#ccc;
+        }
+        .bdo-item {
+            margin-left: 20px;
+            background: #6666;
+            padding: 1px 20px;
+            margin-bottom: 15px;
+        }
+
+        .district-title span{
+            color:green;
+        }
+        h5 {
+    
+    margin-block-start: 16px;
+    margin-block-end: 16px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+    </style>
+</head>
+<body>
+    <h1>BDO Data Grouped by District</h1>
+    <div id="bdo-container"></div>
+
+    <script>
+        // Fetch data from the API
+        fetch('http://localhost/php_api_bdo/api_get_bdo_grouped_by_district/api_get_bdo_by_district.php')
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    displayGroupedData(data.data);
+                } else {
+                    document.getElementById('bdo-container').innerText = "No BDO data found.";
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching BDO data:', error);
+                document.getElementById('bdo-container').innerText = "Error fetching BDO data.";
+            });
+
+        // Function to display grouped data
+        function displayGroupedData(groupedData) {
+            const container = document.getElementById('bdo-container');
+
+            for (const districtName in groupedData) {
+                // Create a div for each district group
+                const districtGroupDiv = document.createElement('div');
+                districtGroupDiv.classList.add('district-group');
+
+                // Add district title
+                const districtTitle = document.createElement('div');
+                districtTitle.classList.add('district-title');
+                districtTitle.innerHTML = `<h1><span>District Name :</span> ${districtName}</h1>`;
+                districtGroupDiv.appendChild(districtTitle);
+
+                // Add BDO items under the district
+                groupedData[districtName].forEach(bdo => {
+                    const bdoItem = document.createElement('div');
+                    bdoItem.classList.add('bdo-item');
+                    bdoItem.innerHTML = `<h5>ID: ${bdo.id}</h5> <h5>BDO Name: ${bdo.bdo_name}</h5></>`;
+                    districtGroupDiv.appendChild(bdoItem); 
+                });
+
+                // Append the district group div to the container
+                container.appendChild(districtGroupDiv);
+            }
+        }
+    </script>
+</body>
+</html>

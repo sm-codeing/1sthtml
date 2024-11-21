@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert District Name</title>
+</head>
+<body>
+    <h2>Insert District Name with aotu generated dst_code in dst_id table header</h2>
+    <form id="districtForm">
+        <label for="district_name">District Name:</label>
+        <input type="text" id="district_name" name="district_name" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="response"></p>
+
+    <script>
+        document.getElementById('districtForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent form from submitting the usual way
+
+            const districtName = document.getElementById('district_name').value;
+
+
+           //////-----** const districtNameInp = document.getElementById("districtNameInput").value;
+            // Create the data object
+            const data = { district_name: districtName };
+
+            // Make a POST request to the API
+            fetch('http://localhost/php_api_bdo/api_add_district/api_insert_district.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display the response message
+                document.getElementById('response').textContent = data.message;
+               ///// alert("ok ok");
+                document.getElementById("district_name").value = ''; // Clear input field
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                document.getElementById('response').textContent = 'An error occurred.';
+            });
+        });
+    </script>
+</body>
+</html>

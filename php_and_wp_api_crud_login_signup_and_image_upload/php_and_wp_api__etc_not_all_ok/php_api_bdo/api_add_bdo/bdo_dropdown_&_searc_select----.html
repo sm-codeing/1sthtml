@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New BDO</title>
+    <style>
+        /* Basic styling for the dropdown */
+        .dropdown-container {
+            position: relative;
+            width: 250px;
+            font-family: Arial, sans-serif;
+        }
+
+        .dropdown-button {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            text-align: left;
+            background-color: white;
+            font-size: 16px;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            max-height: 150px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            background-color: white;
+            z-index: 1000;
+        }
+
+        .dropdown-option {
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .dropdown-option:hover {
+            background-color: #f0f0f0;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            outline: none;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h2>Add New BDO</h2>
+
+    <!-- Form to add a new BDO -->
+    <form id="addBdoForm" onsubmit="addBdo(event)">
+        <label for="bdoName">BDO Name:</label>
+        <input type="text" id="bdoName" name="bdo_name" required>
+        <br><br>
+
+        <label for="districtDropdown">Select District:</label>
+        <div class="dropdown-container">
+            <div class="dropdown-button" onclick="toggleDropdown()">Select a district</div>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <input type="text" class="search-box" placeholder="Search districts..." oninput="filterOptions(this)">
+                <div id="optionsContainer"></div>
+            </div>
+        </div>
+        <br><br>
+
+        <input type="submit" value="Add BDO">
+    </form>
+
+    <script>
+        let selectedDistrict = ''; // Variable to store the selected district
+
+        // Function to fetch all districts and populate the dropdown
+        async function fetchDistricts() {
+            try {
+                const response = await fetch('http://localhost/php_api_bdo/api_add_bdo/api_fetch_districts.php');
+                const districts = await response.json();
+                populateDropdown(districts);
+            } catch (error) {
+                alert('Error fetching districts: ' + error.message);
+            }
+        }
+
+        // Function to populate the dropdown options dynamically
+        function populateDropdown(districts) {
+            const optionsContainer = document.getElementById("optionsContainer");
+            optionsContainer.innerHTML = ''; // Clear existing options
+
+            districts.forEach(district => {
+                const option = document.createElement("div");
+                option.className = "dropdown-option";
+                option.textContent = district.district_name; // Assuming your API returns an object with 'district_name'
+                option.onclick = () => selectOption(district.district_name); // Set the value to district name
+                optionsContainer.appendChild(option);
+            });
+        }
+
+        // Toggle dropdown display
+        function toggleDropdown() {
+            const dropdownMenu = document.getElementById("dropdownMenu");
+            dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+        }
+
+        // Filter options based on input
+        function filterOptions(input) {
+            const filterText = input.value.toLowerCase();
+            const options = document.querySelectorAll(".dropdown-option");
+
+            options.forEach(option => {
+                const text = option.textContent.toLowerCase();
+                option.style.display = text.includes(filterText) ? "" : "none";
+            });
+        }
+
+        // Select an option and update the button text
+        function selectOption(text) {
+            const dropdownButton = document.querySelector(".dropdown-button");
+            dropdownButton.textContent = text;
+            selectedDistrict = text; // Store the selected district
+            toggleDropdown(); // Hide dropdown after selection
+        }
+
+        // Close dropdown if clicked outside
+        document.addEventListener("click", function(event) {
+            const container = document.querySelector(".dropdown-container");
+            if (!container.contains(event.target)) {
+                document.getElementById("dropdownMenu").style.display = "none";
+            }
+        });
+
+        // Function to handle form submission and add a new BDO
+        async function addBdo(event) {
+            event.preventDefault();
+
+            const bdoName = document.getElementById('bdoName').value;
+
+            if (bdoName === '' || selectedDistrict === '') {
+                alert('Please enter all the details.');
+                return;
+            }
+
+            const data = {
+                bdo_name: bdoName,
+                district_name: selectedDistrict // Use the selected district
+            };
+
+            try {
+                const response = await fetch('http://localhost/php_api_bdo/api_add_bdo/api_insert_bdo.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+                if (result.status === 'success') {
+                    alert('BDO added successfully!');
+                } else {
+                    alert('Error adding BDO: ' + result.message);
+                }
+
+                // Optionally, reset the form
+                document.getElementById('addBdoForm').reset();
+                document.querySelector(".dropdown-button").textContent = "Select a district"; // Reset dropdown button
+                selectedDistrict = ''; // Reset selected district
+            } catch (error) {
+                alert('Error adding BDO: ' + error.message);
+            }
+        }
+
+        // Fetch the districts when the page loads
+        window.onload = fetchDistricts;
+    </script>
+</body>
+</html>
