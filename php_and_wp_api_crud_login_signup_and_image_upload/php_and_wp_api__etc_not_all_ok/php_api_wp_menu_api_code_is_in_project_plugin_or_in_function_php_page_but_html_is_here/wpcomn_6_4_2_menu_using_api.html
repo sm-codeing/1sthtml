@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordPress Menu Display</title>
+    <style>
+        /* Basic styles for nested menu */
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        .sub-menu {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>WordPress Menu</h1>
+    <div id="menu-container"></div>
+
+    <script>
+        async function fetchMenu() {
+            try {
+                const response = await fetch('http://localhost/wpcomn_6_4_2/wp-json/custom/v1/menu-items?menu=header_menu');
+                
+                if (!response.ok) {
+                    throw new Error('Failed to fetch menu items');
+                }
+                
+                const menuItems = await response.json();
+                displayMenu(menuItems);
+            } catch (error) {
+                console.error('Error fetching menu:', error);
+                document.getElementById('menu-container').innerHTML = '<p>Could not load menu items.</p>';
+            }
+        }
+
+        function displayMenu(menuItems) {
+            const container = document.getElementById('menu-container');
+            const menuList = document.createElement('ul');
+            menuList.classList.add('menu'); // Add WordPress-style class to the top-level <ul>
+
+            menuItems.forEach(item => {
+                const listItem = createMenuItem(item);
+                menuList.appendChild(listItem);
+            });
+
+            container.appendChild(menuList);
+        }
+
+        function createMenuItem(item) {
+            const listItem = document.createElement('li');
+            listItem.classList.add('menu-item'); // Add WordPress-style class for menu item
+
+            const link = document.createElement('a');
+            link.href = item.url;
+            link.textContent = item.title.rendered || item.title; // Use `title.rendered` if available
+            listItem.appendChild(link);
+
+            // If the item has submenu items, recursively create submenu list
+            if (item.submenu && item.submenu.length > 0) {
+                listItem.classList.add('menu-item-has-children'); // Add WordPress-style class for parent item
+
+                const submenuList = document.createElement('ul');
+                submenuList.classList.add('sub-menu'); // Add WordPress-style class for submenu
+
+                item.submenu.forEach(submenuItem => {
+                    const submenuListItem = createMenuItem(submenuItem);
+                    submenuList.appendChild(submenuListItem);
+                });
+
+                listItem.appendChild(submenuList);
+            }
+
+            return listItem;
+        }
+
+        // Fetch and display the menu when the page loads
+        fetchMenu();
+    </script>
+</body>
+</html> 
