@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Data Example</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+    <div class="container">
+        <h1>Fetched Data</h1>
+        <div id="data-container">
+            <!-- Data will be inserted here -->
+        </div>
+        <button id="loadDataBtn">Load Data</button>
+    </div>
+
+
+
+
+
+
+<script>    
+
+
+// API URL
+const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+
+// DOM elements
+const dataContainer = document.getElementById('data-container');
+const loadDataBtn = document.getElementById('loadDataBtn');
+let shouldLoadAllData = false;  // Flag to determine if we should fetch 100 records
+
+// AbortController to cancel the request if needed
+let abortController = null;
+
+// Fetch data from API
+async function fetchData(numberOfItems) {
+    const url = `${apiUrl}?_limit=${numberOfItems}`; // Limit the number of records requested
+    abortController = new AbortController();  // Create a new AbortController instance
+    const signal = abortController.signal;   // Get the signal from the controller
+
+    console.time('API Call Time'); // Start measuring time
+    try {
+        const response = await fetch(url, { signal });  // Pass the signal to fetch
+
+        if (response.ok) {
+            const data = await response.json();
+
+            // Display the fetched data (5 records for example)
+            displayData(data);
+
+            // After displaying 5 records, abort the fetch to stop further processing
+            if (data.length === 5) {
+                console.log('Received 5 records, aborting fetch.');
+                abortController.abort();  // Abort the request
+            }
+        } else {
+            console.error('Failed to fetch data', response.status);
+        }
+    } catch (error) {
+        if (error.name === 'AbortError') {
+            console.log('Fetch aborted');
+        } else {
+            console.error('Error fetching data:', error);
+        }
+    }
+    console.timeEnd('API Call Time'); // Log the time taken for the fetch
+}
+
+// Display the data on the page
+function displayData(data) {
+    dataContainer.innerHTML = ''; // Clear existing content
+
+    data.forEach(item => {
+        const dataItem = document.createElement('div');
+        dataItem.classList.add('data-item');
+        dataItem.innerHTML = `
+            <h3>${item.title}</h3>
+            <p>${item.body}</p>
+        `;
+        dataContainer.appendChild(dataItem);
+    });
+
+    // Disable the button after data is loaded
+    loadDataBtn.disabled = true;
+    loadDataBtn.textContent = "Data Loaded";
+}
+
+// Event listener for the button click
+loadDataBtn.addEventListener('click', function() {
+    if (!shouldLoadAllData) {
+        fetchData(50); // Fetch only 5 items initially
+        shouldLoadAllData = true; // Set the flag to fetch 100 on next click
+    } else {
+        fetchData(100); // Fetch 100 items if flag is set
+    }
+});
+
+
+</script>
+
+<!-- 
+<script>  
+
+// API URL
+const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+
+// DOM elements
+const dataContainer = document.getElementById('data-container');
+const loadDataBtn = document.getElementById('loadDataBtn');
+let shouldLoadAllData = false;  // Flag to determine if we should fetch 100 records
+
+// Fetch data from API
+async function fetchData(numberOfItems) {
+    const url = `${apiUrl}?_limit=${numberOfItems}`; // Limit the number of records requested
+    console.time('API Call Time'); // Start measuring time
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        // Display the fetched data
+        displayData(data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+    console.timeEnd('API Call Time'); // Log the time taken for the fetch
+}
+
+// Display the data on the page
+function displayData(data) {
+    dataContainer.innerHTML = ''; // Clear existing content
+
+    data.forEach(item => {
+        const dataItem = document.createElement('div');
+        dataItem.classList.add('data-item');
+        dataItem.innerHTML = `
+            <h3>${item.title}</h3>
+            <p>${item.body}</p>
+        `;
+        dataContainer.appendChild(dataItem);
+    });
+
+    // Disable the button after data is loaded
+    loadDataBtn.disabled = true;
+    loadDataBtn.textContent = "Data Loaded";
+}
+
+// Event listener for the button click
+loadDataBtn.addEventListener('click', function() {
+    if (!shouldLoadAllData) {
+        fetchData(5); // Fetch only 5 items initially
+        shouldLoadAllData = true; // Set the flag to fetch 100 on next click
+    } else {
+        fetchData(100); // Fetch 100 items if flag is set
+    }
+});
+
+
+
+
+
+</script>
+
+
+
+ -->
+
+    <!-- <script> 
+    
+    
+    
+    // API URL
+const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+
+// DOM elements
+const dataContainer = document.getElementById('data-container');
+const loadDataBtn = document.getElementById('loadDataBtn');
+let shouldLoadAllData = false;  // Flag to determine if we should fetch 100 records
+
+// Fetch data from API
+async function fetchData(numberOfItems) {
+    const url = `${apiUrl}?_limit=${numberOfItems}`; // Limit the number of records requested
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        // Display the fetched data
+        displayData(data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+
+// Display the data on the page
+function displayData(data) {
+    dataContainer.innerHTML = ''; // Clear existing content
+
+    data.forEach(item => {
+        const dataItem = document.createElement('div');
+        dataItem.classList.add('data-item');
+        dataItem.innerHTML = `
+            <h3>${item.title}</h3>
+            <p>${item.body}</p>
+        `;
+        dataContainer.appendChild(dataItem);
+    });
+
+    // Disable the button after data is loaded
+    loadDataBtn.disabled = true;
+    loadDataBtn.textContent = "Data Loaded";
+}
+
+// Event listener for the button click
+loadDataBtn.addEventListener('click', function() {
+    if (!shouldLoadAllData) {
+        fetchData(5); // Fetch only 5 items initially
+        shouldLoadAllData = true; // Set the flag to fetch 100 on next click
+    } else {
+        fetchData(100); // Fetch 100 items if flag is set
+    }
+});
+
+    
+    
+    
+    
+    
+    </script> -->
+
+
+
+
+      <!-- <script>
+
+
+
+
+
+
+
+// API URL
+const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+
+// DOM elements
+const dataContainer = document.getElementById('data-container');
+const loadDataBtn = document.getElementById('loadDataBtn');
+
+let isDataLoaded = false; // Flag to ensure data is loaded once
+
+// Fetch data from API
+async function fetchData() {
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        // Display the first 5 items and stop further fetching
+        displayData(data.slice(0, 5)); // Only take first 5 items
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+
+// Display the data on the page
+function displayData(data) {
+    dataContainer.innerHTML = ''; // Clear existing content
+
+    data.forEach(item => {
+        const dataItem = document.createElement('div');
+        dataItem.classList.add('data-item');
+        dataItem.innerHTML = `
+            <h3>${item.title}</h3>
+            <p>${item.body}</p>
+        `;
+        dataContainer.appendChild(dataItem);
+    });
+
+    // Disable the button after data is loaded
+    loadDataBtn.disabled = true;
+    loadDataBtn.textContent = "Data Loaded";
+}
+
+// Event listener for the button click
+loadDataBtn.addEventListener('click', function() {
+    if (!isDataLoaded) {
+        fetchData(); // Fetch data from API
+        isDataLoaded = true; // Set flag to true to prevent multiple calls
+    }
+});
+
+
+    </script>   -->
+</body>
+</html>

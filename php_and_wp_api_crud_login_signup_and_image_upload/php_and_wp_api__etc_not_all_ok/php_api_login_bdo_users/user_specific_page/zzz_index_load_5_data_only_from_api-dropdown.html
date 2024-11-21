@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Select Dropdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        select {
+            width: 200px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Dynamic Select Dropdown with First 5 Records</h2>
+    <select id="data-dropdown">
+        <option value="">Select an ID</option>
+    </select>
+
+    <script>
+        // API URL
+        const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+        
+        // The select dropdown element
+        const dataDropdown = document.getElementById('data-dropdown');
+        
+        // AbortController to cancel the request if needed
+        let abortController = null;
+
+        // Function to fetch data and fill the dropdown
+        async function fetchData() {
+            const url = `${apiUrl}?_limit=5`; // Limit to 5 records
+            abortController = new AbortController();  // Create a new AbortController instance
+            const signal = abortController.signal;   // Get the signal from the controller
+
+            console.time('API Call Time'); // Start measuring time
+
+            try {
+                const response = await fetch(url, { signal });
+
+                if (response.ok) {
+                    const data = await response.json();
+
+                    // Populate the dropdown with data
+                    populateDropdown(data);
+
+                    // Abort the request if we get the desired data (5 records)
+                    if (data.length === 5) {
+                        console.log('Received 5 records, aborting fetch.');
+                        abortController.abort();  // Abort the request
+                    }
+                } else {
+                    console.error('Failed to fetch data', response.status);
+                }
+            } catch (error) {
+                if (error.name === 'AbortError') {
+                    console.log('Fetch aborted');
+                } else {
+                    console.error('Error fetching data:', error);
+                }
+            }
+
+            console.timeEnd('API Call Time'); // Log the time taken for the fetch
+        }
+
+        // Function to populate the dropdown with the fetched data
+        function populateDropdown(data) {
+            // Clear existing options
+            dataDropdown.innerHTML = '<option value="">Select an ID</option>';
+
+            // Add new options based on the fetched data
+            data.forEach(item => {
+                const option = document.createElement('option');
+                option.value = item.title;  // Set the value as the ID
+                // option.value = item.id;  // Set the value as the ID
+                option.textContent = `TITLE: ${item.title}`;  // Display the ID in the dropdown
+                dataDropdown.appendChild(option);
+            });
+        }
+
+        // Load data when the page is ready
+        window.onload = function() {
+            fetchData(); // Fetch and populate the dropdown on page load
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New BDO</title>
+    
+</head>
+<body>
+
+    <h2>Add New BDO Start</h2>
+    <div class="add_bdo">
+
+        <script>
+            // Function to fetch all districts and populate the dropdown
+            async function fetchDistricts() {
+                try {
+                    const response = await fetch('http://localhost/php_api_bdo/1api_bdo_all_crud/api_fetch_districts.php');
+                    const districts = await response.json();
+    
+                    const districtDropdown = document.getElementById('districtDropdown');
+                    districts.forEach(district => {
+                        const option = document.createElement('option');
+                       ////-- option.value = district.dst_id;  // Set the dst_id from district
+                        option.value = district.district_name;  //--/////// Set the district_name from district
+                        option.text = district.district_name;  // Display the district name
+                        districtDropdown.appendChild(option);
+                    });
+                } catch (error) {
+                    alert('Error fetching districts: ' + error.message);
+                }
+            }
+    
+            // Function to handle form submission and add a new BDO
+            async function addBdo(event) {
+                event.preventDefault();
+    
+                const bdoName = document.getElementById('bdoName').value;
+                const districtId = document.getElementById('districtDropdown').value;
+    
+                if (bdoName === '' || districtId === '') {
+                    alert('Please enter all the details.');
+                    return;
+                }
+    
+                const data = {
+                    bdo_name: bdoName,
+                    district_name: districtId
+                };
+    
+                try {
+                    const response = await fetch('http://localhost/php_api_bdo/1api_bdo_all_crud/api_insert_bdo.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data),
+                    });
+    
+                    const result = await response.json();
+                    if (result.status === 'success') {
+                        alert('BDO added successfully!');
+                     ///////   fetchDistricts();
+                    } else {
+                        alert('Error adding BDO: ' + result.message);
+                    }
+    
+                    // Optionally, reset the form
+                    document.getElementById('addBdoForm').reset();
+                } catch (error) {
+                    alert('Error adding BDO: ' + error.message);
+                }
+            }
+    
+            // Fetch the districts when the page loads
+            window.onload = fetchDistricts;
+        </script>
+
+
+
+
+
+
+    <!-- Form to add a new BDO -->
+    <form id="addBdoForm" onsubmit="addBdo(event)">
+        <label for="bdoName">BDO Name:</label>
+        <input type="text" id="bdoName" name="bdo_name" required>
+        <br><br>
+
+        <label for="districtDropdown">Select District:</label>
+        <select id="districtDropdown" name="dst_id" required>
+            <option value="" disabled selected>Select a district</option>
+            <!-- Districts will be populated here dynamically -->
+        </select>
+        <br><br>
+
+        <input type="submit" value="Add BDO">
+    </form>
+
+</div>
+<h2>Add New BDO end</h2>
+   
+<hr>
+<hr>
+<hr>
+
+
+
+
+
+<h1>-------------------------- Edit bdo start ------------------------------</h1>
+
+<div class="edit_bdo_dta">
+
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+
+        td[contenteditable="true"] {
+    /* Your styles here */
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    color: #df1212 !important;
+}
+
+
+    </style>
+
+    
+
+    <!-- Form to create a new BDO record -->
+    
+
+    <!-- Table to display BDO records -->
+    <h3>BDO Records</h3>
+    <table id="bdoTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>BDO Name</th>
+                <th>District ID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be populated here -->
+        </tbody>
+    </table>
+
+    <script>
+        // Fetch all BDO records
+        function fetchBdoRecords() {
+            fetch('http://localhost/php_api_bdo/1api_bdo_all_crud/api_read_bdo.php')
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.querySelector('#bdoTable tbody');
+                    tbody.innerHTML = '';
+
+                    if (data.status === 'success') {
+                        data.data.forEach(bdo => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${bdo.id}</td>
+                                <td contenteditable="false">${bdo.bdo_name}</td>
+                                <td contenteditable="false">${bdo.dst_id}</td>
+                                <td>
+                                    <button onclick="editBdo(${bdo.id}, this)">Edit</button>
+                                    <button onclick="saveEdit(${bdo.id}, this)" style="display: none;">Save</button>
+                                    <button onclick="deleteBdo(${bdo.id})">Delete</button>
+                                </td>
+                            `;
+                            tbody.appendChild(row);
+                        });
+                    }
+                })
+                .catch(error => console.error('Error fetching BDO records:', error));
+        }
+
+        fetchBdoRecords(); // Refresh the table
+      
+      
+        // Toggle edit mode
+        function editBdo(id, editButton) {
+            const row = editButton.parentElement.parentElement;
+            const bdoNameCell = row.cells[1];
+            const districtIdCell = row.cells[2];
+            const saveButton = editButton.nextElementSibling;
+            bdoNameCell.classList.add("newCls")
+            // Make the cells editable
+            bdoNameCell.contentEditable = true;
+            districtIdCell.contentEditable = true;
+
+            // Show the Save button and hide the Edit button
+            saveButton.style.display = 'inline';
+            editButton.style.display = 'none';
+        }
+
+        // Save edited data
+        function saveEdit(id, saveButton) {
+            const row = saveButton.parentElement.parentElement;
+            const bdoNameCell = row.cells[1];
+            const districtIdCell = row.cells[2];
+
+            const updatedBdoName = bdoNameCell.textContent.trim();
+            const updatedDstId = districtIdCell.textContent.trim();
+
+            fetch('http://localhost/php_api_bdo/1api_bdo_all_crud/api_update_bdo_inline_cc.php', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id: id, bdo_name: updatedBdoName, dst_id: updatedDstId }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    alert(data.message);
+
+                    // Make the cells non-editable
+                    bdoNameCell.contentEditable = false;
+                    districtIdCell.contentEditable = false;
+
+                    // Show the Edit button and hide the Save button
+                    saveButton.style.display = 'none';
+                    saveButton.previousElementSibling.style.display = 'inline';
+                } else {
+                    alert('Error updating BDO record: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error updating BDO record:', error);
+                alert('Error updating BDO record: ' + error.message);
+            });
+        }
+
+        // Create a new BDO record
+        // document.getElementById('createForm').addEventListener('submit', function(event) {
+        //     event.preventDefault();
+
+        //     const bdoName = document.getElementById('bdoName').value;
+        //     const districtId = document.getElementById('districtId').value;
+
+        //     fetch('http://localhost/php_api_bdo/1api_bdo_all_crud/api_create_bdo.php', {    ////// ***************** ned to chek latter
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json',
+        //         },
+        //         body: JSON.stringify({ bdo_name: bdoName, district_id: districtId }),
+        //     })
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         alert(data.message);
+        //         fetchBdoRecords(); // Refresh the table
+        //     })
+        //     .catch(error => console.error('Error creating BDO record:', error));
+        // });
+
+
+
+
+
+
+
+        // Delete a BDO record
+        function deleteBdo(id) {
+            if (confirm('Are you sure you want to delete this BDO?')) {
+                fetch(`http://localhost/php_api_bdo/1api_bdo_all_crud/api_delete_bdo.php?id=${id}`, {
+                    method: 'DELETE',
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    fetchBdoRecords(); // Refresh the table
+                })
+                .catch(error => console.error('Error deleting BDO record:', error));
+            }
+        }
+
+        // Initial fetch of BDO records
+        fetchBdoRecords();
+    </script>
+
+
+</div>
+
+
+
+<h1>---------------------------- Edit bdo end ----------------------------</h1>
+<hr>
+<hr>
+<hr>
+
+<h1>Display bdo data as per district grouped start </h1>
+    <div class="dsp_bdo_as_per_district_group">
+
+
+        <style>
+            .district-group {
+                margin-bottom: 20px;
+                padding: 10px;
+                border: 1px solid #ccc;
+            }
+            .district-title {
+                font-weight: bold;
+                font-size: 18px;
+                margin-bottom: 10px;
+                color:#ccc;
+            }
+            .bdo-item {
+                margin-left: 20px;
+                background: #6666;
+                padding: 1px 20px;
+                margin-bottom: 15px;
+            }
+    
+            .district-title span{
+                color:green;
+            }
+            h5 {
+        
+        margin-block-start: 16px;
+        margin-block-end: 16px;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        unicode-bidi: isolate;
+    }
+    
+        </style>
+
+
+
+
+
+<script>
+    // Fetch data from the API
+    fetch('http://localhost/php_api_bdo/1api_bdo_all_crud/api_get_bdo_by_district.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                displayGroupedData(data.data);
+            } else {
+                document.getElementById('bdo-container').innerText = "No BDO data found.";
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching BDO data:', error);
+            document.getElementById('bdo-container').innerText = "Error fetching BDO data.";
+        });
+
+    // Function to display grouped data
+    function displayGroupedData(groupedData) {
+        const container = document.getElementById('bdo-container');
+
+        for (const districtName in groupedData) {
+            // Create a div for each district group
+            const districtGroupDiv = document.createElement('div');
+            districtGroupDiv.classList.add('district-group');
+
+            // Add district title
+            const districtTitle = document.createElement('div');
+            districtTitle.classList.add('district-title');
+            districtTitle.innerHTML = `<h1><span>District Name :</span> ${districtName}</h1>`;
+            districtGroupDiv.appendChild(districtTitle);
+
+            // Add BDO items under the district
+            groupedData[districtName].forEach(bdo => {
+                const bdoItem = document.createElement('div');
+                bdoItem.classList.add('bdo-item');
+                bdoItem.innerHTML = `<h5>ID: ${bdo.id}</h5> <h5>BDO Name: ${bdo.bdo_name}</h5></>`;
+                districtGroupDiv.appendChild(bdoItem); 
+            });
+
+            // Append the district group div to the container
+            container.appendChild(districtGroupDiv);
+        }
+    }
+</script>
+
+
+<div id="bdo-container"></div>
+
+    </div>
+<h1>Display bdo data as per district grouped  end </h1>
+
+</body>
+</html>
