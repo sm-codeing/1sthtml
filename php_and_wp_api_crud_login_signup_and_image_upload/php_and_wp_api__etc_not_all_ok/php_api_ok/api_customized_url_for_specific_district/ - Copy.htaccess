@@ -1,0 +1,4 @@
+RewriteEngine On
+
+# Rewrite rule to match the desired URL pattern
+RewriteRule ^district/([a-zA-Z0-9_-]+)$ api_get_bdo_by_district_only_specific_district.php?district=$1 [L,QSA]

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDO CRUD Operations</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>BDO CRUD Operations</h1>
+
+    <!-- Form to create a new BDO record -->
+    <form id="createForm">
+        <h3>Create BDO</h3>
+        <label for="bdoName">BDO Name:</label>
+        <input type="text" id="bdoName" name="bdo_name" required>
+        <br>
+        <label for="districtId">District ID:</label>
+        <input type="number" id="districtId" name="district_id" required>
+        <br>
+        <button type="submit">Create</button>
+    </form>
+
+    <!-- Table to display BDO records -->
+    <h3>BDO Records</h3>
+    <table id="bdoTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>BDO Name</th>
+                <th>District ID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be populated here -->
+        </tbody>
+    </table>
+
+
+
+    
+     
+    
+    <script>
+        // Fetch all BDO records
+        function fetchBdoRecords() {
+    fetch('http://localhost/php_api_ok/api_crud_bdo/api_read_bdo.php')
+        .then(response => response.json())
+        .then(data => {
+            const tbody = document.querySelector('#bdoTable tbody');
+            tbody.innerHTML = '';
+
+            if (data.status === 'success') {
+                data.data.forEach(bdo => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${bdo.id}</td>
+                        <td>${bdo.bdo_name}</td>
+                        <td>${bdo.dst_id}</td>
+                        <td>
+                            <button onclick="editBdo(${bdo.id}, '${bdo.bdo_name}', ${bdo.dst_id})">Edit</button>
+                            <button onclick="deleteBdo(${bdo.id})">Delete</button>
+                        </td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            } else {
+                alert('Error fetching BDO records: ' + data.message);
+            }
+        })
+        .catch(error => console.error('Error fetching BDO records:', error));
+}
+
+
+        // Create a new BDO record
+        document.getElementById('createForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const bdoName = document.getElementById('bdoName').value;
+            const districtId = document.getElementById('districtId').value;
+
+            fetch('http://localhost/php_api_ok/api_crud_bdo/api_create_bdo.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ bdo_name: bdoName, district_id: districtId }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                fetchBdoRecords(); // Refresh the table
+            })
+            .catch(error => {
+                console.error('Error creating BDO record:', error);
+                alert('Error creating BDO record: ' + error.message);
+            });
+        });
+
+
+ 
+// Edit a BDO record
+function editBdo(id, bdoName, dstId) {
+    const newBdoName = prompt('Enter new BDO name:', bdoName);
+    const newDstId = prompt('Enter new District ID:', dstId);
+
+    if (newBdoName && newDstId) {
+        fetch('http://localhost/php_api_ok/api_crud_bdo/api_update_bdo.php', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ id: id, bdo_name: newBdoName, dst_id: newDstId }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            fetchBdoRecords(); // Refresh the table
+        })
+        .catch(error => console.error('Error updating BDO record:', error));
+    }
+}
+
+
+
+        // // Edit a BDO record  old
+        // function editBdo(id, bdoName, dstId) {
+        //     const newBdoName = prompt('Enter new BDO name:', bdoName);
+        //     const newDstId = prompt('Enter new District ID:', dstId);
+
+        //     if (newBdoName && newDstId) {
+        //         fetch('http://localhost/php_api_ok/api_crud_bdo/api_update_bdo.php', {
+        //             method: 'PUT',
+        //             headers: {
+        //                 'Content-Type': 'application/json',
+        //             },
+        //             body: JSON.stringify({ id: id, bdo_name: newBdoName, dst_id: newDstId }),
+        //         })
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             alert(data.message);
+        //             fetchBdoRecords(); // Refresh the table
+        //         })
+        //         .catch(error => {
+        //             console.error('Error updating BDO record:', error);
+        //             alert('Error updating BDO record: ' + error.message);
+        //         });
+        //     }
+        // }
+
+
+
+
+// Delete a BDO record
+function deleteBdo(id) {
+    if (confirm('Are you sure you want to delete this BDO?')) {
+        fetch(`http://localhost/php_api_ok/api_crud_bdo/api_delete_bdo.php?id=${id}`, {
+            method: 'DELETE',
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            fetchBdoRecords(); // Refresh the table
+        })
+        .catch(error => console.error('Error deleting BDO record:', error));
+    }
+}
+
+
+        // // Delete a BDO record  old
+        // function deleteBdo(id) {
+        //     if (confirm('Are you sure you want to delete this BDO?')) {
+        //         fetch(`http://localhost/php_api_ok/api_crud_bdo/api_delete_bdo.php?id=${id}`, {
+        //             method: 'DELETE',
+        //         })
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             alert(data.message);
+        //             fetchBdoRecords(); // Refresh the table
+        //         })
+        //         .catch(error => {
+        //             console.error('Error deleting BDO record:', error);
+        //             alert('Error deleting BDO record: ' + error.message);
+        //         });
+        //     }
+        // }
+
+        // Initial fetch of BDO records
+        fetchBdoRecords();
+    </script> 
+   
+
+</body>
+</html>
